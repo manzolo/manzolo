@@ -32,9 +32,9 @@ Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, ag
 | [mcp-lab](https://github.com/manzolo/mcp-lab) | Playground Model Context Protocol: dai "braccia e gambe" a un LLM con tool locali |
 | [ollama-agents](https://github.com/manzolo/ollama-agents) | Architettura Docker Compose per agenti AI specializzati |
 | [ollama-actions](https://github.com/manzolo/ollama-actions) | Agente LLM che ragiona ed esegue azioni Bash/HTTP in sicurezza |
-| [ollama-model-train-guide](https://github.com/manzolo/ollama-model-train-guide) | Guida per addestrare e personalizzare modelli Ollama |
+| [ollama-model-train-guide](https://github.com/manzolo/ollama-model-train-guide) | Guida per addestrare e personalizzare modelli Ollama · [🌐 Guida online](https://manzolo.github.io/ollama-model-train-guide/) |
 | [qemu-lab-generator](https://github.com/manzolo/qemu-lab-generator) | Meta-prompt che fa generare a un'AI laboratori QEMU completi |
-| [claude-cheatsheets](https://github.com/manzolo/claude-cheatsheets) | Cheatsheet PDF su Claude Code e Claude.ai (IT/EN) |
+| [claude-cheatsheets](https://github.com/manzolo/claude-cheatsheets) | Cheatsheet PDF su Claude Code e Claude.ai (IT/EN) · [🌐 Sito](https://manzolo.github.io/claude-cheatsheets/) |
 | [claude-statusline](https://github.com/manzolo/claude-statusline) | Statusline personalizzata per Claude Code: contesto, git e Docker |
 
 #### 📄 Documenti intelligenti
@@ -72,17 +72,23 @@ Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, ag
 | [wordpress-docker-manager](https://github.com/manzolo/wordpress-docker-manager) | Gestione multi-sito WordPress con Nginx Proxy Manager |
 | [ubuntu-repo-docker](https://github.com/manzolo/ubuntu-repo-docker) | Il tuo repository di pacchetti Ubuntu/Debian personale (stile PPA) |
 
-### 🔬 Scienza e didattica 3D
+### 🔬 Scienza e didattica
 
-| Repo | Descrizione |
-|------|-------------|
-| [TavolaPeriodica3D](https://github.com/manzolo/TavolaPeriodica3D) | Tavola periodica interattiva 3D con orbite elettroniche animate |
-| [SistemaSolare](https://github.com/manzolo/SistemaSolare) | Simulatore interattivo del sistema solare: pianeti, orbite e schede informative |
-| [IfacGalaxy](https://github.com/manzolo/IfacGalaxy) | Simulatore 3D interattivo di esopianeti |
-| [GeoTimeVoyage](https://github.com/manzolo/GeoTimeVoyage) | Viaggio 3D in 4,6 miliardi di anni di storia della Terra |
-| [EvoTree3D](https://github.com/manzolo/EvoTree3D) | Albero filogenetico 3D della vita, da LUCA alle specie moderne |
-| [GeneFlow3D](https://github.com/manzolo/GeneFlow3D) | DNA, RNA, trascrizione e traduzione in 3D |
-| [StarLife3D](https://github.com/manzolo/StarLife3D) | Ciclo di vita delle stelle in 3D interattivo |
+Tutti provabili subito nel browser, senza installare nulla. 👇
+
+| Repo | Descrizione | 🌐 Demo |
+|------|-------------|---------|
+| [TavolaPeriodica3D](https://github.com/manzolo/TavolaPeriodica3D) | Tavola periodica interattiva 3D con orbite elettroniche animate | [Apri](https://manzolo.github.io/TavolaPeriodica3D/) |
+| [SistemaSolare](https://github.com/manzolo/SistemaSolare) | Simulatore interattivo del sistema solare: pianeti, orbite e schede informative | [Apri](https://manzolo.github.io/SistemaSolare/) |
+| [IfacGalaxy](https://github.com/manzolo/IfacGalaxy) | Simulatore 3D interattivo di esopianeti | [Apri](https://manzolo.github.io/IfacGalaxy/) |
+| [GeoTimeVoyage](https://github.com/manzolo/GeoTimeVoyage) | Viaggio 3D in 4,6 miliardi di anni di storia della Terra | [Apri](https://manzolo.github.io/GeoTimeVoyage/) |
+| [EvoTree3D](https://github.com/manzolo/EvoTree3D) | Albero filogenetico 3D della vita, da LUCA alle specie moderne | [Apri](https://manzolo.github.io/EvoTree3D/) |
+| [GeneFlow3D](https://github.com/manzolo/GeneFlow3D) | DNA, RNA, trascrizione e traduzione in 3D | [Apri](https://manzolo.github.io/GeneFlow3D/) |
+| [StarLife3D](https://github.com/manzolo/StarLife3D) | Ciclo di vita delle stelle in 3D interattivo | [Apri](https://manzolo.github.io/StarLife3D/) |
+| [CellCycle3D](https://github.com/manzolo/CellCycle3D) | Simulatore 3D della divisione cellulare (mitosi e meiosi) | [Apri](https://manzolo.github.io/CellCycle3D/) |
+| [ProteinSuite](https://github.com/manzolo/ProteinSuite) | Web app didattica su proteine, FASTA e proprietà biochimiche (IT/EN) | [Apri](https://manzolo.github.io/ProteinSuite/) |
+| [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portale di esperienze scientifiche interattive | [Apri](https://manzolo.github.io/MuseoScientificoVirtuale/) |
+| [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Raccolta di quiz educativi interattivi | [Apri](https://manzolo.github.io/quiz-didattici/) |
 
 ---
 
@@ -116,9 +122,9 @@ I love running AI **locally**: speech recognition, voice cloning, LLM agents, do
 | [mcp-lab](https://github.com/manzolo/mcp-lab) | Model Context Protocol playground: give an LLM "arms and legs" with local tools |
 | [ollama-agents](https://github.com/manzolo/ollama-agents) | Docker Compose architecture for multiple specialized AI agents |
 | [ollama-actions](https://github.com/manzolo/ollama-actions) | LLM agent that reasons and executes Bash/HTTP actions safely |
-| [ollama-model-train-guide](https://github.com/manzolo/ollama-model-train-guide) | Train, customize and manage Ollama models with Docker Compose |
+| [ollama-model-train-guide](https://github.com/manzolo/ollama-model-train-guide) | Train, customize and manage Ollama models with Docker Compose · [🌐 Online guide](https://manzolo.github.io/ollama-model-train-guide/) |
 | [qemu-lab-generator](https://github.com/manzolo/qemu-lab-generator) | Meta-prompt that makes any AI generate a complete working QEMU lab |
-| [claude-cheatsheets](https://github.com/manzolo/claude-cheatsheets) | PDF cheatsheets for Claude Code and Claude.ai (IT/EN) |
+| [claude-cheatsheets](https://github.com/manzolo/claude-cheatsheets) | PDF cheatsheets for Claude Code and Claude.ai (IT/EN) · [🌐 Site](https://manzolo.github.io/claude-cheatsheets/) |
 | [claude-statusline](https://github.com/manzolo/claude-statusline) | Custom Claude Code statusline: context window, git & Docker info |
 
 #### 📄 Document Intelligence
@@ -156,17 +162,23 @@ I love running AI **locally**: speech recognition, voice cloning, LLM agents, do
 | [wordpress-docker-manager](https://github.com/manzolo/wordpress-docker-manager) | Manage multiple WordPress instances with Nginx Proxy Manager |
 | [ubuntu-repo-docker](https://github.com/manzolo/ubuntu-repo-docker) | Your own PPA-like Ubuntu/Debian package repository |
 
-### 🔬 Science & Education (3D)
+### 🔬 Science & Education
 
-| Repo | Description |
-|------|-------------|
-| [TavolaPeriodica3D](https://github.com/manzolo/TavolaPeriodica3D) | Interactive 3D periodic table with animated electron orbits |
-| [SistemaSolare](https://github.com/manzolo/SistemaSolare) | Interactive solar-system simulator: planets, orbits and info cards |
-| [IfacGalaxy](https://github.com/manzolo/IfacGalaxy) | Interactive 3D exoplanet simulator |
-| [GeoTimeVoyage](https://github.com/manzolo/GeoTimeVoyage) | 3D journey through 4.6 billion years of Earth's history |
-| [EvoTree3D](https://github.com/manzolo/EvoTree3D) | Interactive 3D phylogenetic tree of life, from LUCA to modern species |
-| [GeneFlow3D](https://github.com/manzolo/GeneFlow3D) | 3D visualization of DNA, RNA, transcription and translation |
-| [StarLife3D](https://github.com/manzolo/StarLife3D) | Interactive 3D stellar life-cycle viewer |
+All playable right in your browser, nothing to install. 👇
+
+| Repo | Description | 🌐 Demo |
+|------|-------------|---------|
+| [TavolaPeriodica3D](https://github.com/manzolo/TavolaPeriodica3D) | Interactive 3D periodic table with animated electron orbits | [Open](https://manzolo.github.io/TavolaPeriodica3D/) |
+| [SistemaSolare](https://github.com/manzolo/SistemaSolare) | Interactive solar-system simulator: planets, orbits and info cards | [Open](https://manzolo.github.io/SistemaSolare/) |
+| [IfacGalaxy](https://github.com/manzolo/IfacGalaxy) | Interactive 3D exoplanet simulator | [Open](https://manzolo.github.io/IfacGalaxy/) |
+| [GeoTimeVoyage](https://github.com/manzolo/GeoTimeVoyage) | 3D journey through 4.6 billion years of Earth's history | [Open](https://manzolo.github.io/GeoTimeVoyage/) |
+| [EvoTree3D](https://github.com/manzolo/EvoTree3D) | Interactive 3D phylogenetic tree of life, from LUCA to modern species | [Open](https://manzolo.github.io/EvoTree3D/) |
+| [GeneFlow3D](https://github.com/manzolo/GeneFlow3D) | 3D visualization of DNA, RNA, transcription and translation | [Open](https://manzolo.github.io/GeneFlow3D/) |
+| [StarLife3D](https://github.com/manzolo/StarLife3D) | Interactive 3D stellar life-cycle viewer | [Open](https://manzolo.github.io/StarLife3D/) |
+| [CellCycle3D](https://github.com/manzolo/CellCycle3D) | Interactive 3D cell-division simulator (mitosis & meiosis) | [Open](https://manzolo.github.io/CellCycle3D/) |
+| [ProteinSuite](https://github.com/manzolo/ProteinSuite) | Educational web app for proteins, FASTA and biochemical properties (IT/EN) | [Open](https://manzolo.github.io/ProteinSuite/) |
+| [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portal of interactive science experiences | [Open](https://manzolo.github.io/MuseoScientificoVirtuale/) |
+| [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Collection of interactive educational quizzes | [Open](https://manzolo.github.io/quiz-didattici/) |
 
 ---
 
