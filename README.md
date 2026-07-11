@@ -87,6 +87,7 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 | [StarLife3D](https://github.com/manzolo/StarLife3D) | Ciclo di vita delle stelle in 3D interattivo | [Apri](https://manzolo.github.io/StarLife3D/) |
 | [CellCycle3D](https://github.com/manzolo/CellCycle3D) | Simulatore 3D della divisione cellulare (mitosi e meiosi) | [Apri](https://manzolo.github.io/CellCycle3D/) |
 | [ProteinSuite](https://github.com/manzolo/ProteinSuite) | Web app didattica su proteine, FASTA e proprietà biochimiche (IT/EN) | [Apri](https://manzolo.github.io/ProteinSuite/) |
+| [SimulatoreAssembler](https://github.com/manzolo/SimulatoreAssembler) | Impara l'assembly su una CPU didattica 16-bit: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/SimulatoreAssembler/) |
 | [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portale di esperienze scientifiche interattive | [Apri](https://manzolo.github.io/MuseoScientificoVirtuale/) |
 | [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Raccolta di quiz educativi interattivi | [Apri](https://manzolo.github.io/quiz-didattici/) |
 
@@ -177,6 +178,7 @@ All playable right in your browser, nothing to install. 👇
 | [StarLife3D](https://github.com/manzolo/StarLife3D) | Interactive 3D stellar life-cycle viewer | [Open](https://manzolo.github.io/StarLife3D/) |
 | [CellCycle3D](https://github.com/manzolo/CellCycle3D) | Interactive 3D cell-division simulator (mitosis & meiosis) | [Open](https://manzolo.github.io/CellCycle3D/) |
 | [ProteinSuite](https://github.com/manzolo/ProteinSuite) | Educational web app for proteins, FASTA and biochemical properties (IT/EN) | [Open](https://manzolo.github.io/ProteinSuite/) |
+| [SimulatoreAssembler](https://github.com/manzolo/SimulatoreAssembler) | Learn assembly on a 16-bit educational CPU: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/SimulatoreAssembler/) |
 | [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portal of interactive science experiences | [Open](https://manzolo.github.io/MuseoScientificoVirtuale/) |
 | [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Collection of interactive educational quizzes | [Open](https://manzolo.github.io/quiz-didattici/) |
 
