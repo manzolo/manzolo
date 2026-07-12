@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>manzolo · projects</title>
+<meta name="description" content="Andrea Manzi — Linux, Docker, AI locale e retrogaming. Menu interattivo dei progetti.">
+<style>
+  :root {
+    --bg: #0d0f12;
+    --surface: #16191e;
+    --surface-2: #1c2027;
+    --border: #262b33;
+    --text: #e6e9ef;
+    --muted: #8b93a1;
+    --accent: #f5a623;
+    --accent-soft: rgba(245, 166, 35, 0.12);
+    --demo: #38bdf8;
+    --demo-soft: rgba(56, 189, 248, 0.12);
+    --star: #fbbf24;
+    --radius: 12px;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #faf9f7;
+      --surface: #ffffff;
+      --surface-2: #f4f2ee;
+      --border: #e5e2dc;
+      --text: #1a1d21;
+      --muted: #6b7280;
+      --accent: #c2410c;
+      --accent-soft: rgba(194, 65, 12, 0.10);
+      --demo: #0369a1;
+      --demo-soft: rgba(3, 105, 161, 0.10);
+      --star: #d97706;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d0f12; --surface: #16191e; --surface-2: #1c2027; --border: #262b33;
+    --text: #e6e9ef; --muted: #8b93a1; --accent: #f5a623; --accent-soft: rgba(245,166,35,0.12);
+    --demo: #38bdf8; --demo-soft: rgba(56,189,248,0.12); --star: #fbbf24;
+  }
+  :root[data-theme="light"] {
+    --bg: #faf9f7; --surface: #ffffff; --surface-2: #f4f2ee; --border: #e5e2dc;
+    --text: #1a1d21; --muted: #6b7280; --accent: #c2410c; --accent-soft: rgba(194,65,12,0.10);
+    --demo: #0369a1; --demo-soft: rgba(3,105,161,0.10); --star: #d97706;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 140px; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 4rem;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 1.25rem;
+  }
+  .prompt {
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .prompt .user { color: var(--accent); }
+  .prompt .cursor {
+    display: inline-block; width: 8px; height: 1.05em; background: var(--accent);
+    vertical-align: text-bottom; margin-left: 2px; animation: blink 1.1s step-end infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  h1 {
+    font-family: var(--mono);
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+  }
+  h1 .wave { display: inline-block; }
+  .tagline { color: var(--muted); font-size: 1.02rem; max-width: 640px; }
+
+  /* ---------- Sticky toolbar ---------- */
+  .toolbar {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .toolbar-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0.7rem 1.25rem;
+    display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;
+  }
+  .search {
+    flex: 1 1 220px; min-width: 160px;
+    display: flex; align-items: center; gap: 0.5rem;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 999px; padding: 0.45rem 0.9rem;
+  }
+  .search svg { flex: none; width: 16px; height: 16px; stroke: var(--muted); }
+  .search input {
+    flex: 1; background: none; border: none; color: var(--text);
+    font-family: var(--sans); font-size: 0.95rem; outline: none;
+  }
+  .search input::placeholder { color: var(--muted); }
+  .btn-group { display: flex; gap: 0.4rem; }
+  .toggle {
+    background: var(--surface); border: 1px solid var(--border); color: var(--muted);
+    border-radius: 999px; padding: 0.45rem 0.8rem; cursor: pointer;
+    font-family: var(--mono); font-size: 0.85rem; font-weight: 600;
+    display: flex; align-items: center; gap: 0.3rem; transition: color .15s, border-color .15s;
+  }
+  .toggle:hover { color: var(--text); border-color: var(--accent); }
+  .lang span { opacity: 0.4; }
+  .lang span.on { opacity: 1; color: var(--accent); }
+
+  /* ---------- Category nav ---------- */
+  nav.cats {
+    max-width: 1100px; margin: 1rem auto 0; padding: 0 1.25rem;
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+  }
+  nav.cats a {
+    text-decoration: none; color: var(--muted);
+    border: 1px solid var(--border); background: var(--surface);
+    border-radius: 999px; padding: 0.35rem 0.8rem; font-size: 0.85rem;
+    transition: color .15s, border-color .15s, background .15s;
+  }
+  nav.cats a:hover { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }
+
+  /* ---------- Sections ---------- */
+  main { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+  section { margin-top: 2.75rem; scroll-margin-top: 140px; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 0.6rem;
+    border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; margin-bottom: 1.1rem;
+  }
+  .sec-head h2 {
+    font-family: var(--mono); font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em;
+  }
+  .sec-head .count { font-family: var(--mono); font-size: 0.85rem; color: var(--muted); }
+
+  .subhead {
+    font-family: var(--mono); font-size: 0.9rem; color: var(--accent);
+    font-weight: 600; margin: 1.4rem 0 0.7rem;
+  }
+
+  /* ---------- Cards ---------- */
+  .grid {
+    display: grid; gap: 0.85rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1rem 1.1rem;
+    display: flex; flex-direction: column; gap: 0.55rem;
+    transition: border-color .15s, transform .15s, box-shadow .15s;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+  .card-top { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  .card-name {
+    font-family: var(--mono); font-weight: 700; font-size: 1rem;
+    color: var(--text); text-decoration: none;
+  }
+  .card-name:hover { color: var(--accent); text-decoration: underline; }
+  .chip {
+    font-family: var(--mono); font-size: 0.68rem; font-weight: 700;
+    padding: 0.12rem 0.45rem; border-radius: 999px; letter-spacing: 0.03em;
+  }
+  .chip.star { background: transparent; color: var(--star); border: 1px solid transparent; padding-left: 0; }
+  .chip.edu { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent); }
+  .card-desc { color: var(--muted); font-size: 0.9rem; flex: 1; }
+  .card-links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.2rem; }
+  .lnk {
+    text-decoration: none; font-family: var(--mono); font-size: 0.78rem; font-weight: 600;
+    padding: 0.3rem 0.7rem; border-radius: 8px; display: inline-flex; align-items: center; gap: 0.35rem;
+    border: 1px solid var(--border); transition: background .15s, border-color .15s;
+  }
+  .lnk.repo { color: var(--text); }
+  .lnk.repo:hover { border-color: var(--text); }
+  .lnk.demo { color: var(--demo); background: var(--demo-soft); border-color: transparent; }
+  .lnk.demo:hover { border-color: var(--demo); }
+  .lnk svg { width: 13px; height: 13px; }
+
+  .no-results {
+    display: none; text-align: center; color: var(--muted);
+    font-family: var(--mono); padding: 3rem 1rem;
+  }
+  .no-results.show { display: block; }
+
+  footer {
+    max-width: 1100px; margin: 3.5rem auto 0; padding: 1.5rem 1.25rem 0;
+    border-top: 1px solid var(--border); color: var(--muted);
+    font-family: var(--mono); font-size: 0.82rem;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="prompt"><span class="user">manzolo@github</span>:<span>~</span>$ ls ~/projects<span class="cursor"></span></div>
+  <h1><span class="wave">👋</span> Andrea Manzi</h1>
+  <p class="tagline"
+     data-it="Appassionato di Linux, Docker, AI locale e retrogaming — costruisco tool, laboratori e container, per divertimento e per imparare. Toscana · CNR-IFAC."
+     data-en="Linux enthusiast, Docker addict, local-AI tinkerer and retrogamer — I build tools, hands-on labs and containers, for fun and learning. Tuscany, Italy · CNR-IFAC.">
+  </p>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <label class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      <input id="search" type="search" autocomplete="off"
+             data-it-ph="Cerca progetti…" data-en-ph="Search projects…" placeholder="Cerca progetti…">
+    </label>
+    <div class="btn-group">
+      <button class="toggle lang" id="langBtn" title="Language">
+        <span id="langIt" class="on">IT</span><span>/</span><span id="langEn">EN</span>
+      </button>
+      <button class="toggle" id="themeBtn" title="Theme">
+        <span id="themeIcon">◐</span>
+      </button>
+    </div>
+  </div>
+  <nav class="cats" id="cats"></nav>
+</div>
+
+<main id="main"></main>
+<div class="no-results" id="noResults"
+     data-it="Nessun progetto trovato." data-en="No projects found."></div>
+
+<footer>
+  <span data-it="Fatto con ☕ e un po' di terminale" data-en="Made with ☕ and a bit of terminal"></span>
+  <span><a href="https://github.com/manzolo">github.com/manzolo</a></span>
+</footer>
+
+<script>
+const R = "https://github.com/manzolo/";
+const P = "https://manzolo.github.io/";
+
+// data: [repo, it, en, {demo, star, edu, altRepo}]
+const DATA = [
+  { id:"ai", it:"🤖 AI & LLM", en:"🤖 AI & LLM", subs:[
+    { it:"🎙️ Voce e parlato", en:"🎙️ Speech & Voice", items:[
+      ["openai-whisper-docker","Ambiente Docker per OpenAI Whisper, riconoscimento vocale automatico","Docker environment for OpenAI Whisper automatic speech recognition",{star:174}],
+      ["myshell-openvoice-docker","OpenVoice (MyShell AI) in Docker: manipolazione e conversione della voce","OpenVoice (MyShell AI) voice manipulation & conversion in Docker",{star:40}],
+      ["ai-voice-offline","Conversazione vocale AI offline con GPU e voice cloning","Local GPU-accelerated AI voice conversation with voice cloning",{}],
+      ["ai-voice-tts","Sintesi vocale offline con interfaccia web","Local TTS service with web UI, fully offline",{}],
+      ["ai-voice-stt","Trascrizione vocale offline con interfaccia web","Local STT service with web UI, fully offline",{}],
+      ["bark-tts-server","Servizio HTTP FastAPI per Suno Bark TTS, Dockerizzato con GPU","FastAPI HTTP service for Suno Bark TTS, Dockerized with GPU support",{}],
+      ["whisper-audio-transcriber","Pipeline di conversione audio e trascrizione con Whisper su GPU","Audio conversion + transcription pipeline with Whisper on GPU",{}],
+      ["poetry-voice","Trasforma poesie in audiolibri espressivi: analisi prosodica LLM + TTS","Poems → expressive audiobooks: LLM prosody analysis + configurable TTS",{}],
+      ["uvr-docker","Ultimate Vocal Remover in Docker: separa voce e strumenti","Ultimate Vocal Remover in Docker: split vocals & instrumentals",{}],
+    ]},
+    { it:"🧠 LLM, agenti e Ollama", en:"🧠 LLM, Agents & Ollama", items:[
+      ["mcp-lab","Playground Model Context Protocol: dai \"braccia e gambe\" a un LLM con tool locali","Model Context Protocol playground: give an LLM \"arms and legs\" with local tools",{}],
+      ["ollama-agents","Architettura Docker Compose per agenti AI specializzati","Docker Compose architecture for multiple specialized AI agents",{}],
+      ["ollama-actions","Agente LLM che ragiona ed esegue azioni Bash/HTTP in sicurezza","LLM agent that reasons and executes Bash/HTTP actions safely",{}],
+      ["ollama-model-train-guide","Guida per addestrare e personalizzare modelli Ollama","Train, customize and manage Ollama models with Docker Compose",{demo:"ollama-model-train-guide"}],
+      ["qemu-lab-generator","Meta-prompt che fa generare a un'AI laboratori QEMU completi","Meta-prompt that makes any AI generate a complete working QEMU lab",{}],
+      ["claude-cheatsheets","Cheatsheet PDF su Claude Code e Claude.ai (IT/EN)","PDF cheatsheets for Claude Code and Claude.ai (IT/EN)",{demo:"claude-cheatsheets"}],
+      ["claude-statusline","Statusline personalizzata per Claude Code: contesto, git e Docker","Custom Claude Code statusline: context window, git & Docker info",{}],
+    ]},
+    { it:"📄 Documenti intelligenti", en:"📄 Document Intelligence", items:[
+      ["ollapdf","Chatta con i tuoi PDF in locale via Ollama","Chat with your PDFs locally via Ollama",{}],
+      ["pdf2text-converter","Estrazione testo da PDF con AI (FastAPI + Docker)","AI-powered PDF text extraction (FastAPI + Docker)",{}],
+      ["dots.ocr-docker","OCR Dockerizzato con modello vision-language dots.ocr su vLLM","Dockerized OCR with the dots.ocr vision-language model on vLLM",{}],
+      ["text-converter","Conversione testi in DOCX/PDF/HTML/Markdown con AI locale","Ollama-powered text transformation to DOCX/PDF/HTML/Markdown",{}],
+      ["memvid-docker","Documenti codificati come QR-code in MP4, interrogabili via Ollama","Documents encoded as QR-codes in MP4, queried via Ollama",{}],
+    ]},
+    { it:"🎨 Generazione immagini", en:"🎨 Image Generation", items:[
+      ["fooocus-docker","Fooocus (Stable Diffusion XL) con Docker Compose","Fooocus (Stable Diffusion XL) with Docker Compose",{}],
+    ]},
+  ]},
+  { id:"labs", it:"🧪 Virtualizzazione e laboratori", en:"🧪 Virtualization & Hands-on Labs", items:[
+    ["qlab","Laboratori QEMU pronti all'uso, a plugin (DNS, firewall, RAID, LDAP, mail…)","Plugin-based hands-on QEMU labs (DNS, firewall, RAID, LDAP, mail…)",{}],
+    ["qemu-storage-lab","Impara RAID mdadm e LVM in una VM usa-e-getta","Learn mdadm RAID & LVM inside a disposable QEMU VM",{}],
+    ["multipass-microk8s-cluster-demo","Cluster MicroK8s dimostrativo su VM Multipass","MicroK8s cluster demo on Multipass VMs",{}],
+    ["linux-builder","Costruisci una distro Linux minimale da zero (kernel + BusyBox)","Build a minimal Linux distro from scratch (kernel + BusyBox)",{}],
+    ["cybersecurity-lab","Ambiente didattico di cybersecurity con servizi vulnerabili su Multipass","Vulnerable services on Multipass VMs for security education",{}],
+  ]},
+  { id:"docker", it:"🐳 Tool Docker", en:"🐳 Docker Tools", items:[
+    ["cisco-packet-tracer-docker","Cisco Packet Tracer in un container","Cisco Packet Tracer in a container",{}],
+    ["nextcloud-onlyoffice-docker","Stack Nextcloud + OnlyOffice","Nextcloud + OnlyOffice stack",{}],
+    ["wordpress-docker-manager","Gestione multi-sito WordPress con Nginx Proxy Manager","Manage multiple WordPress instances with Nginx Proxy Manager",{}],
+    ["ubuntu-repo-docker","Il tuo repository di pacchetti Ubuntu/Debian personale (stile PPA)","Your own PPA-like Ubuntu/Debian package repository",{}],
+  ]},
+  { id:"science", it:"🔬 Scienza e didattica", en:"🔬 Science & Education",
+    note_it:"Tutti provabili subito nel browser, senza installare nulla. 👇",
+    note_en:"All playable right in your browser, nothing to install. 👇", items:[
+    ["TavolaPeriodica3D","Tavola periodica interattiva 3D con orbite elettroniche animate","Interactive 3D periodic table with animated electron orbits",{demo:"TavolaPeriodica3D"}],
+    ["SistemaSolare","Simulatore interattivo del sistema solare: pianeti, orbite e schede","Interactive solar-system simulator: planets, orbits and info cards",{demo:"SistemaSolare"}],
+    ["IfacGalaxy","Simulatore 3D interattivo di esopianeti","Interactive 3D exoplanet simulator",{demo:"IfacGalaxy"}],
+    ["GeoTimeVoyage","Viaggio 3D in 4,6 miliardi di anni di storia della Terra","3D journey through 4.6 billion years of Earth's history",{demo:"GeoTimeVoyage"}],
+    ["EvoTree3D","Albero filogenetico 3D della vita, da LUCA alle specie moderne","Interactive 3D phylogenetic tree of life, from LUCA to modern species",{demo:"EvoTree3D"}],
+    ["GeneFlow3D","DNA, RNA, trascrizione e traduzione in 3D","3D visualization of DNA, RNA, transcription and translation",{demo:"GeneFlow3D"}],
+    ["StarLife3D","Ciclo di vita delle stelle in 3D interattivo","Interactive 3D stellar life-cycle viewer",{demo:"StarLife3D"}],
+    ["CellCycle3D","Simulatore 3D della divisione cellulare (mitosi e meiosi)","Interactive 3D cell-division simulator (mitosis & meiosis)",{demo:"CellCycle3D"}],
+    ["ProteinSuite","Web app didattica su proteine, FASTA e proprietà biochimiche (IT/EN)","Educational web app for proteins, FASTA and biochemical properties (IT/EN)",{demo:"ProteinSuite"}],
+    ["MuseoScientificoVirtuale","Portale di esperienze scientifiche interattive","Portal of interactive science experiences",{demo:"MuseoScientificoVirtuale"}],
+    ["quiz-didattici","Raccolta di quiz educativi interattivi","Collection of interactive educational quizzes",{demo:"quiz-didattici"}],
+    ["AssemblerSimulator","Impara l'assembly su una CPU didattica 16-bit: 14 livelli guidati + sandbox (IT/EN)","Learn assembly on a 16-bit educational CPU: 14 guided levels + sandbox (IT/EN)",{demo:"AssemblerSimulator",edu:true}],
+    ["NetworkSimulator","Impara le reti TCP/IP con pacchetti animati e comandi Linux: 14 livelli + sandbox (IT/EN)","Learn TCP/IP networking with animated packets and Linux-style commands: 14 levels + sandbox (IT/EN)",{demo:"NetworkSimulator",edu:true}],
+    ["RegexSimulator","Impara le regex vedendole girare come automi animati: 14 livelli + sandbox (IT/EN)","Learn regex by watching them run as animated automata: 14 levels + sandbox (IT/EN)",{demo:"RegexSimulator",edu:true}],
+    ["SqlSimulator","Impara SQL vedendo ogni fase della query animata su un DB in-memoria: 14 livelli + sandbox (IT/EN)","Learn SQL by watching each query phase animate on an in-memory database: 14 levels + sandbox (IT/EN)",{demo:"SqlSimulator",edu:true}],
+  ]},
+];
+
+let lang = localStorage.getItem("lang") || "it";
+
+const ICON_GH = '<svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>';
+const ICON_EXT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>';
+
+function card(item) {
+  const [repo, it, en, meta = {}] = item;
+  const desc = lang === "it" ? it : en;
+  const chips = [];
+  if (meta.star) chips.push(`<span class="chip star">⭐ ${meta.star}</span>`);
+  if (meta.edu) chips.push(`<span class="chip edu">EDU</span>`);
+  const demoLabel = lang === "it" ? "Apri" : "Open";
+  const demoLnk = meta.demo
+    ? `<a class="lnk demo" href="${P}${meta.demo}/" target="_blank" rel="noopener">${ICON_EXT} ${demoLabel}</a>`
+    : "";
+  const haystack = (repo + " " + it + " " + en).toLowerCase();
+  return `<article class="card" data-search="${haystack.replace(/"/g,'')}">
+    <div class="card-top">
+      <a class="card-name" href="${R}${repo}" target="_blank" rel="noopener">${repo}</a>
+      ${chips.join("")}
+    </div>
+    <p class="card-desc">${desc}</p>
+    <div class="card-links">
+      <a class="lnk repo" href="${R}${repo}" target="_blank" rel="noopener">${ICON_GH} repo</a>
+      ${demoLnk}
+    </div>
+  </article>`;
+}
+
+function render() {
+  const main = document.getElementById("main");
+  const cats = document.getElementById("cats");
+  let html = "", nav = "";
+  for (const sec of DATA) {
+    const title = lang === "it" ? sec.it : sec.en;
+    nav += `<a href="#${sec.id}">${title}</a>`;
+    let body = "";
+    const note = lang === "it" ? sec.note_it : sec.note_en;
+    if (note) body += `<p class="card-desc" style="margin-bottom:.8rem">${note}</p>`;
+    let count = 0;
+    if (sec.subs) {
+      for (const sub of sec.subs) {
+        const subTitle = lang === "it" ? sub.it : sub.en;
+        body += `<h3 class="subhead">${subTitle}</h3><div class="grid">`;
+        body += sub.items.map(card).join("");
+        body += `</div>`;
+        count += sub.items.length;
+      }
+    } else {
+      body += `<div class="grid">${sec.items.map(card).join("")}</div>`;
+      count = sec.items.length;
+    }
+    html += `<section id="${sec.id}">
+      <div class="sec-head"><h2>${title}</h2><span class="count">${count}</span></div>
+      ${body}
+    </section>`;
+  }
+  main.innerHTML = html;
+  cats.innerHTML = nav;
+  applyStaticLang();
+  filter();
+}
+
+function applyStaticLang() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-it]").forEach(el => {
+    el.textContent = el.getAttribute("data-" + lang);
+  });
+  const s = document.getElementById("search");
+  s.placeholder = s.getAttribute("data-" + lang + "-ph");
+  document.getElementById("langIt").classList.toggle("on", lang === "it");
+  document.getElementById("langEn").classList.toggle("on", lang === "en");
+}
+
+function filter() {
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  let anyVisible = false;
+  document.querySelectorAll("section").forEach(sec => {
+    let secVisible = false;
+    sec.querySelectorAll(".card").forEach(c => {
+      const match = !q || c.dataset.search.includes(q);
+      c.style.display = match ? "" : "none";
+      if (match) secVisible = true;
+    });
+    // hide empty subheads
+    sec.querySelectorAll(".grid").forEach(g => {
+      const vis = [...g.querySelectorAll(".card")].some(c => c.style.display !== "none");
+      g.style.display = vis ? "" : "none";
+      const prev = g.previousElementSibling;
+      if (prev && prev.classList.contains("subhead")) prev.style.display = vis ? "" : "none";
+    });
+    sec.style.display = secVisible ? "" : "none";
+    if (secVisible) anyVisible = true;
+  });
+  document.getElementById("noResults").classList.toggle("show", !anyVisible);
+}
+
+// theme
+function currentTheme() {
+  return localStorage.getItem("theme")
+    || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+}
+function applyTheme(t) {
+  document.documentElement.setAttribute("data-theme", t);
+  document.getElementById("themeIcon").textContent = t === "dark" ? "☀" : "☾";
+  localStorage.setItem("theme", t);
+}
+
+document.getElementById("langBtn").addEventListener("click", () => {
+  lang = lang === "it" ? "en" : "it";
+  localStorage.setItem("lang", lang);
+  render();
+});
+document.getElementById("themeBtn").addEventListener("click", () => {
+  applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
+});
+document.getElementById("search").addEventListener("input", filter);
+
+applyTheme(currentTheme());
+render();
+</script>
+</body>
+</html>
