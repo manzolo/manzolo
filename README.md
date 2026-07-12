@@ -91,6 +91,7 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 | [NetworkSimulator](https://github.com/manzolo/NetworkSimulator) | Impara le reti TCP/IP con pacchetti animati e comandi Linux: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/NetworkSimulator/) |
 | [RegexSimulator](https://github.com/manzolo/RegexSimulator) | Impara le regex vedendole girare come automi animati: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/RegexSimulator/) |
 | [SqlSimulator](https://github.com/manzolo/SqlSimulator) | Impara SQL vedendo ogni fase della query animata su un database in-memoria: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/SqlSimulator/) |
+| [GitSimulator](https://github.com/manzolo/GitSimulator) | Apri il cofano di Git: object store content-addressed, SHA-1 reale, 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/GitSimulator/) |
 | [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portale di esperienze scientifiche interattive | [Apri](https://manzolo.github.io/MuseoScientificoVirtuale/) |
 | [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Raccolta di quiz educativi interattivi | [Apri](https://manzolo.github.io/quiz-didattici/) |
 
@@ -185,6 +186,7 @@ All playable right in your browser, nothing to install. 👇
 | [NetworkSimulator](https://github.com/manzolo/NetworkSimulator) | Learn TCP/IP networking with animated packets and Linux-style commands: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/NetworkSimulator/) |
 | [RegexSimulator](https://github.com/manzolo/RegexSimulator) | Learn regex by watching them run as animated automata: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/RegexSimulator/) |
 | [SqlSimulator](https://github.com/manzolo/SqlSimulator) | Learn SQL by watching each query phase animate on an in-memory database: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/SqlSimulator/) |
+| [GitSimulator](https://github.com/manzolo/GitSimulator) | Open the hood on Git: content-addressed object store, real SHA-1, 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/GitSimulator/) |
 | [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portal of interactive science experiences | [Open](https://manzolo.github.io/MuseoScientificoVirtuale/) |
 | [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Collection of interactive educational quizzes | [Open](https://manzolo.github.io/quiz-didattici/) |
 
