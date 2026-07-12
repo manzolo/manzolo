@@ -89,6 +89,7 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 | [ProteinSuite](https://github.com/manzolo/ProteinSuite) | Web app didattica su proteine, FASTA e proprietà biochimiche (IT/EN) | [Apri](https://manzolo.github.io/ProteinSuite/) |
 | [SimulatoreAssembler](https://github.com/manzolo/SimulatoreAssembler) | Impara l'assembly su una CPU didattica 16-bit: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/SimulatoreAssembler/) |
 | [SimulatoreRete](https://github.com/manzolo/SimulatoreRete) | Impara le reti TCP/IP con pacchetti animati e comandi Linux: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/SimulatoreRete/) |
+| [SimulatoreRegEx](https://github.com/manzolo/SimulatoreRegEx) | Impara le regex vedendole girare come automi animati: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/SimulatoreRegEx/) |
 | [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portale di esperienze scientifiche interattive | [Apri](https://manzolo.github.io/MuseoScientificoVirtuale/) |
 | [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Raccolta di quiz educativi interattivi | [Apri](https://manzolo.github.io/quiz-didattici/) |
 
@@ -181,6 +182,7 @@ All playable right in your browser, nothing to install. 👇
 | [ProteinSuite](https://github.com/manzolo/ProteinSuite) | Educational web app for proteins, FASTA and biochemical properties (IT/EN) | [Open](https://manzolo.github.io/ProteinSuite/) |
 | [SimulatoreAssembler](https://github.com/manzolo/SimulatoreAssembler) | Learn assembly on a 16-bit educational CPU: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/SimulatoreAssembler/) |
 | [SimulatoreRete](https://github.com/manzolo/SimulatoreRete) | Learn TCP/IP networking with animated packets and Linux-style commands: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/SimulatoreRete/) |
+| [SimulatoreRegEx](https://github.com/manzolo/SimulatoreRegEx) | Learn regex by watching them run as animated automata: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/SimulatoreRegEx/) |
 | [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portal of interactive science experiences | [Open](https://manzolo.github.io/MuseoScientificoVirtuale/) |
 | [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Collection of interactive educational quizzes | [Open](https://manzolo.github.io/quiz-didattici/) |
 
