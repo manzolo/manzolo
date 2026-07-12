@@ -93,6 +93,7 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 | [SqlSimulator](https://github.com/manzolo/SqlSimulator) | Impara SQL vedendo ogni fase della query animata su un database in-memoria: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/SqlSimulator/) |
 | [GitSimulator](https://github.com/manzolo/GitSimulator) | Apri il cofano di Git: object store content-addressed, SHA-1 reale, 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/GitSimulator/) |
 | [GitBranchingSimulator](https://github.com/manzolo/GitBranchingSimulator) | Impara i branch di git sul DAG animato: merge, rebase, cherry-pick, 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/GitBranchingSimulator/) |
+| [CryptoSimulator](https://github.com/manzolo/CryptoSimulator) | Impara la crittografia guardandola girare: cifrari classici, chiave pubblica/RSA e hashing, motori scritti a mano, livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/CryptoSimulator/) |
 | [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portale di esperienze scientifiche interattive | [Apri](https://manzolo.github.io/MuseoScientificoVirtuale/) |
 | [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Raccolta di quiz educativi interattivi | [Apri](https://manzolo.github.io/quiz-didattici/) |
 
@@ -189,6 +190,7 @@ All playable right in your browser, nothing to install. 👇
 | [SqlSimulator](https://github.com/manzolo/SqlSimulator) | Learn SQL by watching each query phase animate on an in-memory database: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/SqlSimulator/) |
 | [GitSimulator](https://github.com/manzolo/GitSimulator) | Open the hood on Git: content-addressed object store, real SHA-1, 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/GitSimulator/) |
 | [GitBranchingSimulator](https://github.com/manzolo/GitBranchingSimulator) | Learn git branching on an animated commit DAG: merge, rebase, cherry-pick, 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/GitBranchingSimulator/) |
+| [CryptoSimulator](https://github.com/manzolo/CryptoSimulator) | Learn cryptography by watching it run: classic ciphers, public-key/RSA and hashing, hand-written engines, guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/CryptoSimulator/) |
 | [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portal of interactive science experiences | [Open](https://manzolo.github.io/MuseoScientificoVirtuale/) |
 | [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Collection of interactive educational quizzes | [Open](https://manzolo.github.io/quiz-didattici/) |
 
