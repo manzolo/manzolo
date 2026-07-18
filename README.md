@@ -12,7 +12,7 @@ Appassionato di Linux, Docker, AI locale e retrogaming — costruisco tool, labo
 
 ### 🤖 AI & LLM
 
-Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, agenti LLM, analisi documenti — tutto Dockerizzato, senza API key cloud.
+Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, agenti LLM, analisi documenti — tutto Dockerizzato, senza API key cloud. Tutti questi progetti formano il **[Local AI Lab](https://github.com/manzolo/local-ai-lab)**: condividono le stesse convenzioni (rete `local-ai-net`, `OLLAMA_HOST`) e si combinano in pipeline.
 
 #### 🎙️ Voce e parlato
 
@@ -31,6 +31,8 @@ Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, ag
 
 | Repo | Descrizione |
 |------|-------------|
+| [local-ai-lab](https://github.com/manzolo/local-ai-lab) 🧠 | L'hub della famiglia AI locale: mappa dei progetti, convenzioni e pipeline componibili |
+| [ollama-docker](https://github.com/manzolo/ollama-docker) | Ollama + Open WebUI con supporto NVIDIA: il cuore del Local AI Lab |
 | [mcp-lab](https://github.com/manzolo/mcp-lab) | Playground Model Context Protocol: dai "braccia e gambe" a un LLM con tool locali |
 | [ollama-agents](https://github.com/manzolo/ollama-agents) | Architettura Docker Compose per agenti AI specializzati |
 | [ollama-actions](https://github.com/manzolo/ollama-actions) | Agente LLM che ragiona ed esegue azioni Bash/HTTP in sicurezza |
@@ -44,6 +46,7 @@ Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, ag
 | Repo | Descrizione |
 |------|-------------|
 | [ollapdf](https://github.com/manzolo/ollapdf) | Chatta con i tuoi PDF in locale via Ollama |
+| [PDF-Chatbot-Ollama-Langchain-Docker](https://github.com/manzolo/PDF-Chatbot-Ollama-Langchain-Docker) | Chatbot sui tuoi PDF con LangChain e Ollama |
 | [pdf2text-converter](https://github.com/manzolo/pdf2text-converter) | Estrazione testo da PDF con AI (FastAPI + Docker) |
 | [dots.ocr-docker](https://github.com/manzolo/dots.ocr-docker) | OCR Dockerizzato con modello vision-language dots.ocr su vLLM |
 | [text-converter](https://github.com/manzolo/text-converter) | Conversione testi in DOCX/PDF/HTML/Markdown con AI locale |
@@ -121,7 +124,7 @@ Linux enthusiast, Docker addict, local-AI tinkerer and retrogamer — I build to
 
 ### 🤖 AI & LLM
 
-I love running AI **locally**: speech recognition, voice cloning, LLM agents, document intelligence — all Dockerized, no cloud API keys required.
+I love running AI **locally**: speech recognition, voice cloning, LLM agents, document intelligence — all Dockerized, no cloud API keys required. Together these projects form the **[Local AI Lab](https://github.com/manzolo/local-ai-lab)**: they share the same conventions (`local-ai-net` network, `OLLAMA_HOST`) and compose into pipelines.
 
 #### 🎙️ Speech & Voice
 
@@ -140,6 +143,8 @@ I love running AI **locally**: speech recognition, voice cloning, LLM agents, do
 
 | Repo | Description |
 |------|-------------|
+| [local-ai-lab](https://github.com/manzolo/local-ai-lab) 🧠 | The hub of the local AI family: project map, shared conventions and composable pipelines |
+| [ollama-docker](https://github.com/manzolo/ollama-docker) | Ollama + Open WebUI with NVIDIA support: the heart of the Local AI Lab |
 | [mcp-lab](https://github.com/manzolo/mcp-lab) | Model Context Protocol playground: give an LLM "arms and legs" with local tools |
 | [ollama-agents](https://github.com/manzolo/ollama-agents) | Docker Compose architecture for multiple specialized AI agents |
 | [ollama-actions](https://github.com/manzolo/ollama-actions) | LLM agent that reasons and executes Bash/HTTP actions safely |
@@ -153,6 +158,7 @@ I love running AI **locally**: speech recognition, voice cloning, LLM agents, do
 | Repo | Description |
 |------|-------------|
 | [ollapdf](https://github.com/manzolo/ollapdf) | Chat with your PDFs locally via Ollama |
+| [PDF-Chatbot-Ollama-Langchain-Docker](https://github.com/manzolo/PDF-Chatbot-Ollama-Langchain-Docker) | Chat with your PDFs via LangChain and Ollama |
 | [pdf2text-converter](https://github.com/manzolo/pdf2text-converter) | AI-powered PDF text extraction (FastAPI + Docker) |
 | [dots.ocr-docker](https://github.com/manzolo/dots.ocr-docker) | Dockerized OCR with the dots.ocr vision-language model on vLLM |
 | [text-converter](https://github.com/manzolo/text-converter) | Ollama-powered text transformation to DOCX/PDF/HTML/Markdown |
