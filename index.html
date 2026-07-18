@@ -133,6 +133,46 @@
     transition: color .15s, border-color .15s, background .15s;
   }
   nav.cats a:hover { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }
+  nav.cats a.active { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+
+  /* ---------- Home: macro cards ---------- */
+  .macro-grid {
+    display: grid; gap: 1rem; margin-top: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  .macro-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.4rem 1.3rem;
+    text-decoration: none; color: var(--text);
+    display: flex; flex-direction: column; gap: 0.6rem;
+    transition: border-color .15s, transform .15s, box-shadow .15s;
+  }
+  .macro-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); }
+  .macro-emoji { font-size: 2.1rem; line-height: 1; }
+  .macro-title {
+    font-family: var(--mono); font-weight: 700; font-size: 1.12rem;
+    display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap;
+  }
+  .macro-count {
+    font-family: var(--mono); font-size: 0.75rem; font-weight: 600; color: var(--muted);
+    border: 1px solid var(--border); border-radius: 999px; padding: 0.08rem 0.5rem;
+  }
+  .macro-desc { color: var(--muted); font-size: 0.92rem; flex: 1; }
+  .macro-featured {
+    font-family: var(--mono); font-size: 0.76rem; color: var(--muted);
+    display: flex; flex-wrap: wrap; gap: 0.3rem 0.75rem;
+  }
+  .macro-cta { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+
+  /* ---------- Breadcrumb ---------- */
+  .crumb {
+    max-width: 1100px; margin: 1.6rem auto 0; padding: 0 1.25rem;
+    font-family: var(--mono); font-size: 0.85rem;
+  }
+  .crumb a { color: var(--muted); text-decoration: none; }
+  .crumb a:hover { color: var(--accent); }
+  .crumb .sep { color: var(--muted); opacity: 0.5; margin: 0 0.35rem; }
+  .crumb .here { color: var(--accent); }
 
   /* ---------- Sections ---------- */
   main { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
@@ -207,7 +247,7 @@
 <body>
 
 <header>
-  <div class="prompt"><span class="user">manzolo@github</span>:<span>~</span>$ ls ~/projects<span class="cursor"></span></div>
+  <div class="prompt"><span class="user">manzolo@github</span>:<span>~</span>$ <span id="promptCmd">ls ~/projects</span><span class="cursor"></span></div>
   <h1><span class="wave">👋</span> Andrea Manzi</h1>
   <p class="tagline"
      data-it="Appassionato di Linux, Docker, AI locale e retrogaming — costruisco tool, laboratori e container, per divertimento e per imparare. Toscana · CNR-IFAC."
@@ -220,7 +260,7 @@
     <label class="search">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
       <input id="search" type="search" autocomplete="off"
-             data-it-ph="Cerca progetti…" data-en-ph="Search projects…" placeholder="Cerca progetti…">
+             data-it-ph="Cerca in tutti i progetti…" data-en-ph="Search all projects…" placeholder="Cerca in tutti i progetti…">
     </label>
     <div class="btn-group">
       <button class="toggle lang" id="langBtn" title="Language">
@@ -234,6 +274,7 @@
   <nav class="cats" id="cats"></nav>
 </div>
 
+<div class="crumb" id="crumb"></div>
 <main id="main"></main>
 <div class="no-results" id="noResults"
      data-it="Nessun progetto trovato." data-en="No projects found."></div>
@@ -247,9 +288,12 @@
 const R = "https://github.com/manzolo/";
 const P = "https://manzolo.github.io/";
 
-// data: [repo, it, en, {demo, star, edu, altRepo}]
+// data: [repo, it, en, {demo, star, edu}]
 const DATA = [
-  { id:"ai", it:"🤖 AI & LLM", en:"🤖 AI & LLM", subs:[
+  { id:"ai", it:"🤖 AI & LLM", en:"🤖 AI & LLM",
+    desc_it:"Whisper, TTS/STT, voice cloning, agenti Ollama, MCP e documenti intelligenti — tutto in locale, tutto in Docker.",
+    desc_en:"Whisper, TTS/STT, voice cloning, Ollama agents, MCP and document intelligence — all local, all Dockerized.",
+    subs:[
     { it:"🎙️ Voce e parlato", en:"🎙️ Speech & Voice", items:[
       ["openai-whisper-docker","Ambiente Docker per OpenAI Whisper, riconoscimento vocale automatico","Docker environment for OpenAI Whisper automatic speech recognition",{star:174}],
       ["myshell-openvoice-docker","OpenVoice (MyShell AI) in Docker: manipolazione e conversione della voce","OpenVoice (MyShell AI) voice manipulation & conversion in Docker",{star:40}],
@@ -281,48 +325,71 @@ const DATA = [
       ["fooocus-docker","Fooocus (Stable Diffusion XL) con Docker Compose","Fooocus (Stable Diffusion XL) with Docker Compose",{}],
     ]},
   ]},
-  { id:"labs", it:"🧪 Virtualizzazione e laboratori", en:"🧪 Virtualization & Hands-on Labs", items:[
+  { id:"labs", it:"🧪 Virtualizzazione e laboratori", en:"🧪 Virtualization & Hands-on Labs",
+    desc_it:"Laboratori QEMU e Multipass usa-e-getta per imparare facendo: RAID, reti, Kubernetes, sicurezza, kernel.",
+    desc_en:"Disposable QEMU & Multipass labs to learn by doing: RAID, networking, Kubernetes, security, kernels.",
+    items:[
     ["qlab","Laboratori QEMU pronti all'uso, a plugin (DNS, firewall, RAID, LDAP, mail…)","Plugin-based hands-on QEMU labs (DNS, firewall, RAID, LDAP, mail…)",{}],
     ["qemu-storage-lab","Impara RAID mdadm e LVM in una VM usa-e-getta","Learn mdadm RAID & LVM inside a disposable QEMU VM",{}],
     ["multipass-microk8s-cluster-demo","Cluster MicroK8s dimostrativo su VM Multipass","MicroK8s cluster demo on Multipass VMs",{}],
     ["linux-builder","Costruisci una distro Linux minimale da zero (kernel + BusyBox)","Build a minimal Linux distro from scratch (kernel + BusyBox)",{}],
     ["cybersecurity-lab","Ambiente didattico di cybersecurity con servizi vulnerabili su Multipass","Vulnerable services on Multipass VMs for security education",{}],
   ]},
-  { id:"docker", it:"🐳 Tool Docker", en:"🐳 Docker Tools", items:[
+  { id:"docker", it:"🐳 Tool Docker", en:"🐳 Docker Tools",
+    desc_it:"Container pronti all'uso per servizi e strumenti di tutti i giorni: da Packet Tracer al tuo repository PPA personale.",
+    desc_en:"Ready-to-use containers for everyday services and tools: from Packet Tracer to your own PPA-style repository.",
+    items:[
     ["cisco-packet-tracer-docker","Cisco Packet Tracer in un container","Cisco Packet Tracer in a container",{}],
     ["nextcloud-onlyoffice-docker","Stack Nextcloud + OnlyOffice","Nextcloud + OnlyOffice stack",{}],
     ["wordpress-docker-manager","Gestione multi-sito WordPress con Nginx Proxy Manager","Manage multiple WordPress instances with Nginx Proxy Manager",{}],
     ["ubuntu-repo-docker","Il tuo repository di pacchetti Ubuntu/Debian personale (stile PPA)","Your own PPA-like Ubuntu/Debian package repository",{}],
   ]},
   { id:"science", it:"🔬 Scienza e didattica", en:"🔬 Science & Education",
+    desc_it:"Simulatori interattivi 3D ed EDU: astronomia, biologia, chimica e informatica. Tutti provabili nel browser.",
+    desc_en:"Interactive 3D & EDU simulators: astronomy, biology, chemistry and computer science. All playable in the browser.",
     note_it:"Tutti provabili subito nel browser, senza installare nulla. 👇",
-    note_en:"All playable right in your browser, nothing to install. 👇", items:[
-    ["TavolaPeriodica3D","Tavola periodica interattiva 3D con orbite elettroniche animate","Interactive 3D periodic table with animated electron orbits",{demo:"TavolaPeriodica3D"}],
-    ["SistemaSolare","Simulatore interattivo del sistema solare: pianeti, orbite e schede","Interactive solar-system simulator: planets, orbits and info cards",{demo:"SistemaSolare"}],
-    ["IfacGalaxy","Simulatore 3D interattivo di esopianeti","Interactive 3D exoplanet simulator",{demo:"IfacGalaxy"}],
-    ["GeoTimeVoyage","Viaggio 3D in 4,6 miliardi di anni di storia della Terra","3D journey through 4.6 billion years of Earth's history",{demo:"GeoTimeVoyage"}],
-    ["EvoTree3D","Albero filogenetico 3D della vita, da LUCA alle specie moderne","Interactive 3D phylogenetic tree of life, from LUCA to modern species",{demo:"EvoTree3D"}],
-    ["GeneFlow3D","DNA, RNA, trascrizione e traduzione in 3D","3D visualization of DNA, RNA, transcription and translation",{demo:"GeneFlow3D"}],
-    ["StarLife3D","Ciclo di vita delle stelle in 3D interattivo","Interactive 3D stellar life-cycle viewer",{demo:"StarLife3D"}],
-    ["CellCycle3D","Simulatore 3D della divisione cellulare (mitosi e meiosi)","Interactive 3D cell-division simulator (mitosis & meiosis)",{demo:"CellCycle3D"}],
-    ["ProteinSuite","Web app didattica su proteine, FASTA e proprietà biochimiche (IT/EN)","Educational web app for proteins, FASTA and biochemical properties (IT/EN)",{demo:"ProteinSuite"}],
-    ["MuseoScientificoVirtuale","Portale di esperienze scientifiche interattive","Portal of interactive science experiences",{demo:"MuseoScientificoVirtuale"}],
-    ["quiz-didattici","Raccolta di quiz educativi interattivi","Collection of interactive educational quizzes",{demo:"quiz-didattici"}],
-    ["AssemblerSimulator","Impara l'assembly su una CPU didattica 16-bit: 14 livelli guidati + sandbox (IT/EN)","Learn assembly on a 16-bit educational CPU: 14 guided levels + sandbox (IT/EN)",{demo:"AssemblerSimulator",edu:true}],
-    ["NetworkSimulator","Impara le reti TCP/IP con pacchetti animati e comandi Linux: 14 livelli + sandbox (IT/EN)","Learn TCP/IP networking with animated packets and Linux-style commands: 14 levels + sandbox (IT/EN)",{demo:"NetworkSimulator",edu:true}],
-    ["RegexSimulator","Impara le regex vedendole girare come automi animati: 14 livelli + sandbox (IT/EN)","Learn regex by watching them run as animated automata: 14 levels + sandbox (IT/EN)",{demo:"RegexSimulator",edu:true}],
-    ["SqlSimulator","Impara SQL vedendo ogni fase della query animata su un DB in-memoria: 14 livelli + sandbox (IT/EN)","Learn SQL by watching each query phase animate on an in-memory database: 14 levels + sandbox (IT/EN)",{demo:"SqlSimulator",edu:true}],
-    ["GitSimulator","Apri il cofano di Git: object store content-addressed, SHA-1 reale, 14 livelli + sandbox (IT/EN)","Open the hood on Git: content-addressed object store, real SHA-1, 14 levels + sandbox (IT/EN)",{demo:"GitSimulator",edu:true}],
-    ["GitBranchingSimulator","Impara i branch di git sul DAG animato: merge, rebase, cherry-pick, 14 livelli + sandbox (IT/EN)","Learn git branching on an animated commit DAG: merge, rebase, cherry-pick, 14 levels + sandbox (IT/EN)",{demo:"GitBranchingSimulator",edu:true}],
-    ["CryptoSimulator","Impara la crittografia guardandola girare: cifrari classici, chiave pubblica/RSA e hashing, motori scritti a mano + sandbox (IT/EN)","Learn cryptography by watching it run: classic ciphers, public-key/RSA and hashing, hand-written engines + sandbox (IT/EN)",{demo:"CryptoSimulator",edu:true}],
-    ["NeuralSimulator","Impara le reti neurali e il pre-training degli LLM: backprop animata, attention heatmap, un Transformer giocattolo, 14 livelli + sandbox (IT/EN)","Learn neural networks and LLM pre-training: animated backprop, attention heatmaps, a toy Transformer, 14 levels + sandbox (IT/EN)",{demo:"NeuralSimulator",edu:true}],
+    note_en:"All playable right in your browser, nothing to install. 👇",
+    subs:[
+    { it:"🌌 Scienza in 3D", en:"🌌 Science in 3D", items:[
+      ["TavolaPeriodica3D","Tavola periodica interattiva 3D con orbite elettroniche animate","Interactive 3D periodic table with animated electron orbits",{demo:"TavolaPeriodica3D"}],
+      ["SistemaSolare","Simulatore interattivo del sistema solare: pianeti, orbite e schede","Interactive solar-system simulator: planets, orbits and info cards",{demo:"SistemaSolare"}],
+      ["IfacGalaxy","Simulatore 3D interattivo di esopianeti","Interactive 3D exoplanet simulator",{demo:"IfacGalaxy"}],
+      ["GeoTimeVoyage","Viaggio 3D in 4,6 miliardi di anni di storia della Terra","3D journey through 4.6 billion years of Earth's history",{demo:"GeoTimeVoyage"}],
+      ["EvoTree3D","Albero filogenetico 3D della vita, da LUCA alle specie moderne","Interactive 3D phylogenetic tree of life, from LUCA to modern species",{demo:"EvoTree3D"}],
+      ["GeneFlow3D","DNA, RNA, trascrizione e traduzione in 3D","3D visualization of DNA, RNA, transcription and translation",{demo:"GeneFlow3D"}],
+      ["StarLife3D","Ciclo di vita delle stelle in 3D interattivo","Interactive 3D stellar life-cycle viewer",{demo:"StarLife3D"}],
+      ["CellCycle3D","Simulatore 3D della divisione cellulare (mitosi e meiosi)","Interactive 3D cell-division simulator (mitosis & meiosis)",{demo:"CellCycle3D"}],
+      ["ProteinSuite","Web app didattica su proteine, FASTA e proprietà biochimiche (IT/EN)","Educational web app for proteins, FASTA and biochemical properties (IT/EN)",{demo:"ProteinSuite"}],
+      ["MuseoScientificoVirtuale","Portale di esperienze scientifiche interattive","Portal of interactive science experiences",{demo:"MuseoScientificoVirtuale"}],
+      ["quiz-didattici","Raccolta di quiz educativi interattivi","Collection of interactive educational quizzes",{demo:"quiz-didattici"}],
+    ]},
+    { it:"💻 Informatica interattiva (EDU)", en:"💻 Interactive Computer Science (EDU)", items:[
+      ["AssemblerSimulator","Impara l'assembly su una CPU didattica 16-bit: 14 livelli guidati + sandbox (IT/EN)","Learn assembly on a 16-bit educational CPU: 14 guided levels + sandbox (IT/EN)",{demo:"AssemblerSimulator",edu:true}],
+      ["NetworkSimulator","Impara le reti TCP/IP con pacchetti animati e comandi Linux: 14 livelli + sandbox (IT/EN)","Learn TCP/IP networking with animated packets and Linux-style commands: 14 levels + sandbox (IT/EN)",{demo:"NetworkSimulator",edu:true}],
+      ["RegexSimulator","Impara le regex vedendole girare come automi animati: 14 livelli + sandbox (IT/EN)","Learn regex by watching them run as animated automata: 14 levels + sandbox (IT/EN)",{demo:"RegexSimulator",edu:true}],
+      ["SqlSimulator","Impara SQL vedendo ogni fase della query animata su un DB in-memoria: 14 livelli + sandbox (IT/EN)","Learn SQL by watching each query phase animate on an in-memory database: 14 levels + sandbox (IT/EN)",{demo:"SqlSimulator",edu:true}],
+      ["GitSimulator","Apri il cofano di Git: object store content-addressed, SHA-1 reale, 14 livelli + sandbox (IT/EN)","Open the hood on Git: content-addressed object store, real SHA-1, 14 levels + sandbox (IT/EN)",{demo:"GitSimulator",edu:true}],
+      ["GitBranchingSimulator","Impara i branch di git sul DAG animato: merge, rebase, cherry-pick, 14 livelli + sandbox (IT/EN)","Learn git branching on an animated commit DAG: merge, rebase, cherry-pick, 14 levels + sandbox (IT/EN)",{demo:"GitBranchingSimulator",edu:true}],
+      ["CryptoSimulator","Impara la crittografia guardandola girare: cifrari classici, chiave pubblica/RSA e hashing, motori scritti a mano + sandbox (IT/EN)","Learn cryptography by watching it run: classic ciphers, public-key/RSA and hashing, hand-written engines + sandbox (IT/EN)",{demo:"CryptoSimulator",edu:true}],
+      ["NeuralSimulator","Impara le reti neurali e il pre-training degli LLM: backprop animata, attention heatmap, un Transformer giocattolo, 14 livelli + sandbox (IT/EN)","Learn neural networks and LLM pre-training: animated backprop, attention heatmaps, a toy Transformer, 14 levels + sandbox (IT/EN)",{demo:"NeuralSimulator",edu:true}],
+    ]},
   ]},
 ];
 
 let lang = localStorage.getItem("lang") || "it";
+let searchMode = false;
 
 const ICON_GH = '<svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>';
 const ICON_EXT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>';
+
+function flatItems(sec) {
+  return sec.subs ? sec.subs.flatMap(s => s.items) : sec.items;
+}
+
+function route() {
+  const h = location.hash.replace(/^#\/?/, "");
+  return DATA.some(s => s.id === h) ? h : "";
+}
 
 function card(item) {
   const [repo, it, en, meta = {}] = item;
@@ -348,36 +415,82 @@ function card(item) {
   </article>`;
 }
 
+function sectionHtml(sec) {
+  const title = lang === "it" ? sec.it : sec.en;
+  let body = "";
+  const note = lang === "it" ? sec.note_it : sec.note_en;
+  if (note) body += `<p class="card-desc" style="margin-bottom:.8rem">${note}</p>`;
+  if (sec.subs) {
+    for (const sub of sec.subs) {
+      const subTitle = lang === "it" ? sub.it : sub.en;
+      body += `<h3 class="subhead">${subTitle}</h3><div class="grid">`;
+      body += sub.items.map(card).join("");
+      body += `</div>`;
+    }
+  } else {
+    body += `<div class="grid">${sec.items.map(card).join("")}</div>`;
+  }
+  return `<section id="${sec.id}">
+    <div class="sec-head"><h2>${title}</h2><span class="count">${flatItems(sec).length}</span></div>
+    ${body}
+  </section>`;
+}
+
+function featured(sec) {
+  const items = flatItems(sec);
+  const score = i => ((i[3] && i[3].star) || 0) * 1000 + (i[3] && i[3].demo ? 1 : 0);
+  return [...items].sort((a, b) => score(b) - score(a)).slice(0, 3);
+}
+
+function macroCard(sec) {
+  const title = lang === "it" ? sec.it : sec.en;
+  const [emoji, ...rest] = title.split(" ");
+  const desc = lang === "it" ? sec.desc_it : sec.desc_en;
+  const feats = featured(sec).map(i => {
+    const star = i[3] && i[3].star ? "⭐ " : "";
+    return `<span>${star}${i[0]}</span>`;
+  }).join("");
+  const cta = lang === "it" ? "esplora →" : "explore →";
+  return `<a class="macro-card" href="#/${sec.id}">
+    <span class="macro-emoji">${emoji}</span>
+    <span class="macro-title">${rest.join(" ")} <span class="macro-count">${flatItems(sec).length}</span></span>
+    <span class="macro-desc">${desc}</span>
+    <span class="macro-featured">${feats}</span>
+    <span class="macro-cta">${cta}</span>
+  </a>`;
+}
+
 function render() {
   const main = document.getElementById("main");
+  const crumb = document.getElementById("crumb");
   const cats = document.getElementById("cats");
-  let html = "", nav = "";
-  for (const sec of DATA) {
+  const r = route();
+
+  cats.innerHTML = DATA.map(sec => {
     const title = lang === "it" ? sec.it : sec.en;
-    nav += `<a href="#${sec.id}">${title}</a>`;
-    let body = "";
-    const note = lang === "it" ? sec.note_it : sec.note_en;
-    if (note) body += `<p class="card-desc" style="margin-bottom:.8rem">${note}</p>`;
-    let count = 0;
-    if (sec.subs) {
-      for (const sub of sec.subs) {
-        const subTitle = lang === "it" ? sub.it : sub.en;
-        body += `<h3 class="subhead">${subTitle}</h3><div class="grid">`;
-        body += sub.items.map(card).join("");
-        body += `</div>`;
-        count += sub.items.length;
-      }
-    } else {
-      body += `<div class="grid">${sec.items.map(card).join("")}</div>`;
-      count = sec.items.length;
-    }
-    html += `<section id="${sec.id}">
-      <div class="sec-head"><h2>${title}</h2><span class="count">${count}</span></div>
-      ${body}
-    </section>`;
+    const active = !searchMode && r === sec.id ? " class=\"active\"" : "";
+    return `<a href="#/${sec.id}"${active}>${title}</a>`;
+  }).join("");
+
+  const promptCmd = document.getElementById("promptCmd");
+
+  if (searchMode) {
+    promptCmd.textContent = "grep -ri … ~/projects";
+    crumb.innerHTML = "";
+    main.innerHTML = DATA.map(sectionHtml).join("");
+  } else if (r) {
+    const sec = DATA.find(s => s.id === r);
+    promptCmd.textContent = `ls ~/projects/${r}`;
+    const home = lang === "it" ? "🏠 home" : "🏠 home";
+    const title = lang === "it" ? sec.it : sec.en;
+    crumb.innerHTML = `<a href="#/">${home}</a><span class="sep">/</span><span class="here">${title}</span>`;
+    main.innerHTML = sectionHtml(sec);
+  } else {
+    promptCmd.textContent = "ls ~/projects";
+    crumb.innerHTML = "";
+    main.innerHTML = `<div class="macro-grid">${DATA.map(macroCard).join("")}</div>`;
   }
-  main.innerHTML = html;
-  cats.innerHTML = nav;
+
   applyStaticLang();
   filter();
 }
@@ -413,7 +526,8 @@ function filter() {
     sec.style.display = secVisible ? "" : "none";
     if (secVisible) anyVisible = true;
   });
-  document.getElementById("noResults").classList.toggle("show", !anyVisible);
+  const hasCards = document.querySelectorAll("section .card").length > 0;
+  document.getElementById("noResults").classList.toggle("show", hasCards && !anyVisible);
 }
 
 // theme
@@ -435,7 +549,21 @@ document.getElementById("langBtn").addEventListener("click", () => {
 document.getElementById("themeBtn").addEventListener("click", () => {
   applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
 });
-document.getElementById("search").addEventListener("input", filter);
+
+document.getElementById("search").addEventListener("input", () => {
+  const q = document.getElementById("search").value.trim();
+  const wasSearch = searchMode;
+  searchMode = q.length > 0;
+  if (searchMode !== wasSearch) render();
+  else filter();
+});
+
+window.addEventListener("hashchange", () => {
+  const s = document.getElementById("search");
+  if (s.value) { s.value = ""; searchMode = false; }
+  render();
+  window.scrollTo({ top: 0 });
+});
 
 applyTheme(currentTheme());
 render();
