@@ -98,6 +98,7 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 
 | Repo | Descrizione | 🌐 Demo |
 |------|-------------|---------|
+| [NumberSimulator](https://github.com/manzolo/NumberSimulator) | Come i computer rappresentano i numeri, ogni bit passo per passo: basi, complemento a due, IEEE 754, UTF-8, 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/NumberSimulator/) |
 | [AssemblerSimulator](https://github.com/manzolo/AssemblerSimulator) | Impara l'assembly su una CPU didattica 16-bit: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/AssemblerSimulator/) |
 | [NetworkSimulator](https://github.com/manzolo/NetworkSimulator) | Impara le reti TCP/IP con pacchetti animati e comandi Linux: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/NetworkSimulator/) |
 | [RegexSimulator](https://github.com/manzolo/RegexSimulator) | Impara le regex vedendole girare come automi animati: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/RegexSimulator/) |
@@ -205,6 +206,7 @@ All playable right in your browser, nothing to install. 👇
 
 | Repo | Description | 🌐 Demo |
 |------|-------------|---------|
+| [NumberSimulator](https://github.com/manzolo/NumberSimulator) | How computers represent numbers, every bit step by step: bases, two's complement, IEEE 754, UTF-8, 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/NumberSimulator/) |
 | [AssemblerSimulator](https://github.com/manzolo/AssemblerSimulator) | Learn assembly on a 16-bit educational CPU: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/AssemblerSimulator/) |
 | [NetworkSimulator](https://github.com/manzolo/NetworkSimulator) | Learn TCP/IP networking with animated packets and Linux-style commands: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/NetworkSimulator/) |
 | [RegexSimulator](https://github.com/manzolo/RegexSimulator) | Learn regex by watching them run as animated automata: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/RegexSimulator/) |
