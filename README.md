@@ -8,6 +8,8 @@
 
 Appassionato di Linux, Docker, AI locale e retrogaming — costruisco tool, laboratori e container, soprattutto per divertimento e per imparare. Vivo in Toscana e lavoro al CNR-IFAC.
 
+> 🗂️ **Menu interattivo dei progetti:** [manzolo.github.io/manzolo](https://manzolo.github.io/manzolo/) — una home coi macroargomenti e sottopagine dedicate ([🤖 AI & LLM](https://manzolo.github.io/manzolo/#/ai) · [🧪 Laboratori](https://manzolo.github.io/manzolo/#/labs) · [🐳 Docker](https://manzolo.github.io/manzolo/#/docker) · [🔬 Scienza](https://manzolo.github.io/manzolo/#/science)), con ricerca globale.
+
 ### 🤖 AI & LLM
 
 Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, agenti LLM, analisi documenti — tutto Dockerizzato, senza API key cloud.
@@ -76,6 +78,8 @@ Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, ag
 
 Tutti provabili subito nel browser, senza installare nulla. 👇
 
+#### 🌌 Scienza in 3D
+
 | Repo | Descrizione | 🌐 Demo |
 |------|-------------|---------|
 | [TavolaPeriodica3D](https://github.com/manzolo/TavolaPeriodica3D) | Tavola periodica interattiva 3D con orbite elettroniche animate | [Apri](https://manzolo.github.io/TavolaPeriodica3D/) |
@@ -87,6 +91,13 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 | [StarLife3D](https://github.com/manzolo/StarLife3D) | Ciclo di vita delle stelle in 3D interattivo | [Apri](https://manzolo.github.io/StarLife3D/) |
 | [CellCycle3D](https://github.com/manzolo/CellCycle3D) | Simulatore 3D della divisione cellulare (mitosi e meiosi) | [Apri](https://manzolo.github.io/CellCycle3D/) |
 | [ProteinSuite](https://github.com/manzolo/ProteinSuite) | Web app didattica su proteine, FASTA e proprietà biochimiche (IT/EN) | [Apri](https://manzolo.github.io/ProteinSuite/) |
+| [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portale di esperienze scientifiche interattive | [Apri](https://manzolo.github.io/MuseoScientificoVirtuale/) |
+| [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Raccolta di quiz educativi interattivi | [Apri](https://manzolo.github.io/quiz-didattici/) |
+
+#### 💻 Informatica interattiva (EDU)
+
+| Repo | Descrizione | 🌐 Demo |
+|------|-------------|---------|
 | [AssemblerSimulator](https://github.com/manzolo/AssemblerSimulator) | Impara l'assembly su una CPU didattica 16-bit: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/AssemblerSimulator/) |
 | [NetworkSimulator](https://github.com/manzolo/NetworkSimulator) | Impara le reti TCP/IP con pacchetti animati e comandi Linux: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/NetworkSimulator/) |
 | [RegexSimulator](https://github.com/manzolo/RegexSimulator) | Impara le regex vedendole girare come automi animati: 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/RegexSimulator/) |
@@ -95,8 +106,6 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 | [GitBranchingSimulator](https://github.com/manzolo/GitBranchingSimulator) | Impara i branch di git sul DAG animato: merge, rebase, cherry-pick, 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/GitBranchingSimulator/) |
 | [CryptoSimulator](https://github.com/manzolo/CryptoSimulator) | Impara la crittografia guardandola girare: cifrari classici, chiave pubblica/RSA e hashing, motori scritti a mano, livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/CryptoSimulator/) |
 | [NeuralSimulator](https://github.com/manzolo/NeuralSimulator) | Impara le reti neurali e il pre-training degli LLM: backprop animata, attention heatmap, un Transformer giocattolo, 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/NeuralSimulator/) |
-| [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portale di esperienze scientifiche interattive | [Apri](https://manzolo.github.io/MuseoScientificoVirtuale/) |
-| [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Raccolta di quiz educativi interattivi | [Apri](https://manzolo.github.io/quiz-didattici/) |
 
 ---
 
@@ -105,6 +114,8 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 ## Hi, I'm Andrea 👋
 
 Linux enthusiast, Docker addict, local-AI tinkerer and retrogamer — I build tools, hands-on labs and containers, mostly for fun and learning. Based in Tuscany, Italy · CNR-IFAC.
+
+> 🗂️ **Interactive project menu:** [manzolo.github.io/manzolo](https://manzolo.github.io/manzolo/) — a home page of macro-topics with dedicated subpages ([🤖 AI & LLM](https://manzolo.github.io/manzolo/#/ai) · [🧪 Labs](https://manzolo.github.io/manzolo/#/labs) · [🐳 Docker](https://manzolo.github.io/manzolo/#/docker) · [🔬 Science](https://manzolo.github.io/manzolo/#/science)), with global search.
 
 ### 🤖 AI & LLM
 
@@ -174,6 +185,8 @@ I love running AI **locally**: speech recognition, voice cloning, LLM agents, do
 
 All playable right in your browser, nothing to install. 👇
 
+#### 🌌 Science in 3D
+
 | Repo | Description | 🌐 Demo |
 |------|-------------|---------|
 | [TavolaPeriodica3D](https://github.com/manzolo/TavolaPeriodica3D) | Interactive 3D periodic table with animated electron orbits | [Open](https://manzolo.github.io/TavolaPeriodica3D/) |
@@ -185,6 +198,13 @@ All playable right in your browser, nothing to install. 👇
 | [StarLife3D](https://github.com/manzolo/StarLife3D) | Interactive 3D stellar life-cycle viewer | [Open](https://manzolo.github.io/StarLife3D/) |
 | [CellCycle3D](https://github.com/manzolo/CellCycle3D) | Interactive 3D cell-division simulator (mitosis & meiosis) | [Open](https://manzolo.github.io/CellCycle3D/) |
 | [ProteinSuite](https://github.com/manzolo/ProteinSuite) | Educational web app for proteins, FASTA and biochemical properties (IT/EN) | [Open](https://manzolo.github.io/ProteinSuite/) |
+| [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portal of interactive science experiences | [Open](https://manzolo.github.io/MuseoScientificoVirtuale/) |
+| [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Collection of interactive educational quizzes | [Open](https://manzolo.github.io/quiz-didattici/) |
+
+#### 💻 Interactive Computer Science (EDU)
+
+| Repo | Description | 🌐 Demo |
+|------|-------------|---------|
 | [AssemblerSimulator](https://github.com/manzolo/AssemblerSimulator) | Learn assembly on a 16-bit educational CPU: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/AssemblerSimulator/) |
 | [NetworkSimulator](https://github.com/manzolo/NetworkSimulator) | Learn TCP/IP networking with animated packets and Linux-style commands: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/NetworkSimulator/) |
 | [RegexSimulator](https://github.com/manzolo/RegexSimulator) | Learn regex by watching them run as animated automata: 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/RegexSimulator/) |
@@ -193,8 +213,6 @@ All playable right in your browser, nothing to install. 👇
 | [GitBranchingSimulator](https://github.com/manzolo/GitBranchingSimulator) | Learn git branching on an animated commit DAG: merge, rebase, cherry-pick, 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/GitBranchingSimulator/) |
 | [CryptoSimulator](https://github.com/manzolo/CryptoSimulator) | Learn cryptography by watching it run: classic ciphers, public-key/RSA and hashing, hand-written engines, guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/CryptoSimulator/) |
 | [NeuralSimulator](https://github.com/manzolo/NeuralSimulator) | Learn neural networks and LLM pre-training: animated backprop, attention heatmaps, a toy Transformer, 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/NeuralSimulator/) |
-| [MuseoScientificoVirtuale](https://github.com/manzolo/MuseoScientificoVirtuale) | Portal of interactive science experiences | [Open](https://manzolo.github.io/MuseoScientificoVirtuale/) |
-| [quiz-didattici](https://github.com/manzolo/quiz-didattici) | Collection of interactive educational quizzes | [Open](https://manzolo.github.io/quiz-didattici/) |
 
 ---
 
