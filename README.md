@@ -6,7 +6,7 @@
 
 ## Ciao, sono Andrea 👋
 
-Appassionato di Linux, Docker, AI locale e retrogaming — costruisco tool, laboratori e container, soprattutto per divertimento e per imparare. Vivo in Toscana e lavoro al CNR-IFAC.
+Appassionato di Linux, Docker, Git, AI in locale e retrogaming — costruisco tool, laboratori e container, soprattutto per divertimento e per imparare (di questi tempi molto con **Claude** e **Codex**). Vivo in Toscana; al **CNR-IFAC** mando avanti un datacenter di medie dimensioni insieme ad altri due colleghi. Da autodidatta, per scelta. Fuori dal codice: radioamatore **IU5VMO** (patente presa, stazione ancora da montare) e scrivo canzoni, soprattutto per me, con [Suno](https://suno.com/@manzolo).
 
 > 🗂️ **Menu interattivo dei progetti:** [manzolo.github.io/manzolo](https://manzolo.github.io/manzolo/) — una home coi macroargomenti e sottopagine dedicate ([🤖 AI & LLM](https://manzolo.github.io/manzolo/#/ai) · [🧪 Laboratori](https://manzolo.github.io/manzolo/#/labs) · [🐳 Docker](https://manzolo.github.io/manzolo/#/docker) · [🔬 Scienza](https://manzolo.github.io/manzolo/#/science)), con ricerca globale.
 
@@ -119,7 +119,7 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 
 ## Hi, I'm Andrea 👋
 
-Linux enthusiast, Docker addict, local-AI tinkerer and retrogamer — I build tools, hands-on labs and containers, mostly for fun and learning. Based in Tuscany, Italy · CNR-IFAC.
+Linux, Docker, Git, local-AI and retrogaming enthusiast — I build tools, hands-on labs and containers, mostly for fun and learning (these days a lot with **Claude** and **Codex**). Based in Tuscany; at **CNR-IFAC** I run a mid-sized datacenter with two colleagues. Self-taught, by choice. Beyond code: ham radio **IU5VMO** (licence earned, station still to set up) and I write songs, mostly for myself, with [Suno](https://suno.com/@manzolo).
 
 > 🗂️ **Interactive project menu:** [manzolo.github.io/manzolo](https://manzolo.github.io/manzolo/) — a home page of macro-topics with dedicated subpages ([🤖 AI & LLM](https://manzolo.github.io/manzolo/#/ai) · [🧪 Labs](https://manzolo.github.io/manzolo/#/labs) · [🐳 Docker](https://manzolo.github.io/manzolo/#/docker) · [🔬 Science](https://manzolo.github.io/manzolo/#/science)), with global search.
 
