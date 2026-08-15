@@ -113,6 +113,7 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 | [CryptoSimulator](https://github.com/manzolo/CryptoSimulator) | Impara la crittografia guardandola girare: cifrari classici, chiave pubblica/RSA e hashing, motori scritti a mano, livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/CryptoSimulator/) |
 | [NeuralSimulator](https://github.com/manzolo/NeuralSimulator) | Impara le reti neurali e il pre-training degli LLM: backprop animata, attention heatmap, un Transformer giocattolo, 14 livelli guidati + sandbox (IT/EN) | [Apri](https://manzolo.github.io/NeuralSimulator/) |
 | [AiAtlas](https://github.com/manzolo/AiAtlas) | Guida da campo interattiva all'IA moderna: token, parametri, MoE, vision/tools/thinking, calcolatore VRAM e cassetta degli attrezzi (Ollama, agenti di coding), con modalità BASE/PRO (IT/EN) | [Apri](https://manzolo.github.io/AiAtlas/) |
+| [LinuxLab](https://github.com/manzolo/LinuxLab) | Impara Linux con un terminale **vero**: un kernel Linux reale gira nel browser via v86, 22 capitoli dalla prima riga di comando a un server in piedi, esercizi verificati sulla macchina (IT/EN) | [Apri](https://manzolo.github.io/LinuxLab/) |
 
 ---
 
@@ -227,6 +228,7 @@ All playable right in your browser, nothing to install. 👇
 | [CryptoSimulator](https://github.com/manzolo/CryptoSimulator) | Learn cryptography by watching it run: classic ciphers, public-key/RSA and hashing, hand-written engines, guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/CryptoSimulator/) |
 | [NeuralSimulator](https://github.com/manzolo/NeuralSimulator) | Learn neural networks and LLM pre-training: animated backprop, attention heatmaps, a toy Transformer, 14 guided levels + sandbox (IT/EN) | [Open](https://manzolo.github.io/NeuralSimulator/) |
 | [AiAtlas](https://github.com/manzolo/AiAtlas) | Interactive field guide to modern AI: tokens, parameters, MoE, vision/tools/thinking, a VRAM calculator and a toolbox (Ollama, coding agents), with BASE/PRO depth (IT/EN) | [Open](https://manzolo.github.io/AiAtlas/) |
+| [LinuxLab](https://github.com/manzolo/LinuxLab) | Learn Linux with a **real** terminal: a real Linux kernel runs in your browser via v86, 22 chapters from your first command line to a running server, exercises checked on the machine itself (IT/EN) | [Open](https://manzolo.github.io/LinuxLab/?lang=en) |
 
 ---
 
