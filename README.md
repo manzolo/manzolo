@@ -66,7 +66,7 @@ Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, ag
 | [qemu-storage-lab](https://github.com/manzolo/qemu-storage-lab) | Impara RAID mdadm e LVM in una VM usa-e-getta |
 | [multipass-microk8s-cluster-demo](https://github.com/manzolo/multipass-microk8s-cluster-demo) | Cluster MicroK8s dimostrativo su VM Multipass |
 | [linux-builder](https://github.com/manzolo/linux-builder) | Costruisci una distro Linux minimale da zero (kernel + BusyBox) |
-| [cybersecurity-lab](https://github.com/manzolo/cybersecurity-lab) | Ambiente didattico di cybersecurity con servizi vulnerabili su Multipass |
+| [qlab-plugin-cyber-lab](https://github.com/manzolo/qlab-plugin-cyber-lab) | Lab attacco/difesa a plugin per qlab: due VM su una LAN interna, l'attacco è il test — fail2ban col ban dimostrato, PHP vulnerabile, trappola Docker/FORWARD, mail SPF/DKIM/DMARC (rimpiazza cybersecurity-lab, archiviato) |
 
 ### 🐳 Tool Docker
 
@@ -115,6 +115,7 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 | [AiAtlas](https://github.com/manzolo/AiAtlas) | Guida da campo interattiva all'IA moderna: token, parametri, MoE, vision/tools/thinking, calcolatore VRAM e cassetta degli attrezzi (Ollama, agenti di coding), con modalità BASE/PRO (IT/EN) | [Apri](https://manzolo.github.io/AiAtlas/) |
 | [LinuxLab](https://github.com/manzolo/LinuxLab) | Impara Linux con un terminale **vero**: un kernel Linux reale gira nel browser via v86, 22 capitoli dalla prima riga di comando a un server in piedi, esercizi verificati sulla macchina (IT/EN) | [Apri](https://manzolo.github.io/LinuxLab/) |
 | [SshLab](https://github.com/manzolo/SshLab) | Impara SSH con due host Linux **veri** affiancati nel browser: OpenSSH reale, 12 capitoli e 25 esercizi verificati sulle macchine (IT/EN) | [Apri](https://manzolo.github.io/SshLab/) |
+| [CyberLab](https://github.com/manzolo/CyberLab) | Impara a difenderti con due host Linux **veri** affiancati nel browser (attaccante e difensore su una LAN): l'attacco è il test — scoperta delle porte, fail2ban col ban dimostrato, il filtro cieco, falle web (XSS, traversal, RCE), 11 capitoli verificati sulle macchine (IT/EN) | [Apri](https://manzolo.github.io/CyberLab/) |
 
 ---
 
@@ -182,7 +183,7 @@ I love running AI **locally**: speech recognition, voice cloning, LLM agents, do
 | [qemu-storage-lab](https://github.com/manzolo/qemu-storage-lab) | Learn mdadm RAID & LVM inside a disposable QEMU VM |
 | [multipass-microk8s-cluster-demo](https://github.com/manzolo/multipass-microk8s-cluster-demo) | MicroK8s cluster demo on Multipass VMs |
 | [linux-builder](https://github.com/manzolo/linux-builder) | Build a minimal Linux distro from scratch (kernel + BusyBox) |
-| [cybersecurity-lab](https://github.com/manzolo/cybersecurity-lab) | Vulnerable services on Multipass VMs for security education |
+| [qlab-plugin-cyber-lab](https://github.com/manzolo/qlab-plugin-cyber-lab) | Attack/defense qlab plugin: two VMs on an internal LAN, the attack is the test — fail2ban with a proven ban, vulnerable PHP, the Docker/FORWARD trap, mail SPF/DKIM/DMARC (replaces the archived cybersecurity-lab) |
 
 ### 🐳 Docker Tools
 
@@ -231,6 +232,7 @@ All playable right in your browser, nothing to install. 👇
 | [AiAtlas](https://github.com/manzolo/AiAtlas) | Interactive field guide to modern AI: tokens, parameters, MoE, vision/tools/thinking, a VRAM calculator and a toolbox (Ollama, coding agents), with BASE/PRO depth (IT/EN) | [Open](https://manzolo.github.io/AiAtlas/) |
 | [LinuxLab](https://github.com/manzolo/LinuxLab) | Learn Linux with a **real** terminal: a real Linux kernel runs in your browser via v86, 22 chapters from your first command line to a running server, exercises checked on the machine itself (IT/EN) | [Open](https://manzolo.github.io/LinuxLab/?lang=en) |
 | [SshLab](https://github.com/manzolo/SshLab) | Learn SSH with two **real** Linux hosts side by side in the browser: real OpenSSH, 12 chapters and 25 exercises checked on the machines (IT/EN) | [Open](https://manzolo.github.io/SshLab/?lang=en) |
+| [CyberLab](https://github.com/manzolo/CyberLab) | Learn to defend with two **real** Linux hosts side by side in the browser (attacker and defender on a LAN): the attack is the test — port discovery, fail2ban with a proven ban, the blind filter, web flaws (XSS, traversal, RCE), 11 chapters checked on the machines (IT/EN) | [Open](https://manzolo.github.io/CyberLab/?lang=en) |
 
 ---
 
