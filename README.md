@@ -67,6 +67,8 @@ Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, ag
 | [multipass-microk8s-cluster-demo](https://github.com/manzolo/multipass-microk8s-cluster-demo) | Cluster MicroK8s dimostrativo su VM Multipass |
 | [linux-builder](https://github.com/manzolo/linux-builder) | Costruisci una distro Linux minimale da zero (kernel + BusyBox) |
 | [qlab-plugin-cyber-lab](https://github.com/manzolo/qlab-plugin-cyber-lab) | Lab attacco/difesa a plugin per qlab: due VM su una LAN interna, l'attacco è il test — fail2ban col ban dimostrato, PHP vulnerabile, trappola Docker/FORWARD, mail SPF/DKIM/DMARC (rimpiazza cybersecurity-lab, archiviato) |
+| [qlab-plugin-systems-lab](https://github.com/manzolo/qlab-plugin-systems-lab) | Linux Systems a plugin per qlab: **il boot è il test** — parametro kernel via GRUB, recovery di un boot rotto dalla VM di soccorso, sysctl/moduli, partizioni per UUID, LUKS contro l'attaccante col disco in mano, rete persistente, diagnostica dal vivo e un capstone recuperato da macchina spenta (8 capitoli, 104 asserzioni su VM vere) |
+| [qlab-plugin-container-lab](https://github.com/manzolo/qlab-plugin-container-lab) | Container Lab a plugin per qlab: **un container è un processo, e lo si misura** — namespace/cgroup a mano prima di Docker, immagini immutabili, build non-root riproducibili, volumi, DNS dei container, sicurezza (l'operazione vietata fallisce davvero), l'incidente del registry senza auth, e un capstone Compose multi-servizio (11 capitoli) |
 
 ### 🐳 Tool Docker
 
@@ -184,6 +186,8 @@ I love running AI **locally**: speech recognition, voice cloning, LLM agents, do
 | [multipass-microk8s-cluster-demo](https://github.com/manzolo/multipass-microk8s-cluster-demo) | MicroK8s cluster demo on Multipass VMs |
 | [linux-builder](https://github.com/manzolo/linux-builder) | Build a minimal Linux distro from scratch (kernel + BusyBox) |
 | [qlab-plugin-cyber-lab](https://github.com/manzolo/qlab-plugin-cyber-lab) | Attack/defense qlab plugin: two VMs on an internal LAN, the attack is the test — fail2ban with a proven ban, vulnerable PHP, the Docker/FORWARD trap, mail SPF/DKIM/DMARC (replaces the archived cybersecurity-lab) |
+| [qlab-plugin-systems-lab](https://github.com/manzolo/qlab-plugin-systems-lab) | Linux Systems qlab plugin: **the boot is the test** — kernel cmdline via GRUB, rescue of a broken boot from a helper VM, sysctl/modules, partitions by UUID, LUKS vs the attacker holding the disk, persistent networking, live diagnostics, and a capstone recovered from a powered-off machine (8 chapters, 104 assertions on real VMs) |
+| [qlab-plugin-container-lab](https://github.com/manzolo/qlab-plugin-container-lab) | Container Lab qlab plugin: **a container is a process, and we measure it** — namespaces/cgroups by hand before Docker, immutable images, reproducible non-root builds, volumes, container DNS, security (the forbidden op really fails), the no-auth registry incident, and a multi-service Compose capstone (11 chapters) |
 
 ### 🐳 Docker Tools
 
