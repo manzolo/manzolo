@@ -295,8 +295,8 @@ const DATA = [
     desc_en:"The Local AI Lab: Whisper, TTS/STT, voice cloning, Ollama agents, MCP and document intelligence — all local, all Dockerized, all on the same network.",
     subs:[
     { it:"🎙️ Voce e parlato", en:"🎙️ Speech & Voice", items:[
-      ["openai-whisper-docker","Ambiente Docker per OpenAI Whisper, riconoscimento vocale automatico","Docker environment for OpenAI Whisper automatic speech recognition",{star:174}],
-      ["myshell-openvoice-docker","OpenVoice (MyShell AI) in Docker: manipolazione e conversione della voce","OpenVoice (MyShell AI) voice manipulation & conversion in Docker",{star:40}],
+      ["openai-whisper-docker","Ambiente Docker per OpenAI Whisper, riconoscimento vocale automatico","Docker environment for OpenAI Whisper automatic speech recognition",{star:176}],
+      ["myshell-openvoice-docker","OpenVoice (MyShell AI) in Docker: manipolazione e conversione della voce","OpenVoice (MyShell AI) voice manipulation & conversion in Docker",{star:41}],
       ["ai-voice-offline","Conversazione vocale AI offline con GPU e voice cloning","Local GPU-accelerated AI voice conversation with voice cloning",{}],
       ["ai-voice-tts","Sintesi vocale offline con interfaccia web","Local TTS service with web UI, fully offline",{}],
       ["ai-voice-stt","Trascrizione vocale offline con interfaccia web","Local STT service with web UI, fully offline",{}],
@@ -322,6 +322,7 @@ const DATA = [
       ["pdf2text-converter","Estrazione testo da PDF con AI (FastAPI + Docker)","AI-powered PDF text extraction (FastAPI + Docker)",{}],
       ["dots.ocr-docker","OCR Dockerizzato con modello vision-language dots.ocr su vLLM","Dockerized OCR with the dots.ocr vision-language model on vLLM",{}],
       ["text-converter","Conversione testi in DOCX/PDF/HTML/Markdown con AI locale","Ollama-powered text transformation to DOCX/PDF/HTML/Markdown",{}],
+      ["bark-docker","Bark (Suno) containerizzato: file audio generati dal testo","Bark (Suno) containerized: generate audio files from text",{}],
       ["memvid-docker","Documenti codificati come QR-code in MP4, interrogabili via Ollama","Documents encoded as QR-codes in MP4, queried via Ollama",{}],
     ]},
     { it:"🎨 Generazione immagini", en:"🎨 Image Generation", items:[
@@ -329,14 +330,62 @@ const DATA = [
     ]},
   ]},
   { id:"labs", it:"🧪 Virtualizzazione e laboratori", en:"🧪 Virtualization & Hands-on Labs",
-    desc_it:"Laboratori QEMU e Multipass usa-e-getta per imparare facendo: RAID, reti, Kubernetes, sicurezza, kernel.",
-    desc_en:"Disposable QEMU & Multipass labs to learn by doing: RAID, networking, Kubernetes, security, kernels.",
-    items:[
-    ["qlab","Laboratori QEMU pronti all'uso, a plugin (DNS, firewall, RAID, LDAP, mail…)","Plugin-based hands-on QEMU labs (DNS, firewall, RAID, LDAP, mail…)",{}],
-    ["qemu-storage-lab","Impara RAID mdadm e LVM in una VM usa-e-getta","Learn mdadm RAID & LVM inside a disposable QEMU VM",{}],
-    ["multipass-microk8s-cluster-demo","Cluster MicroK8s dimostrativo su VM Multipass","MicroK8s cluster demo on Multipass VMs",{}],
-    ["linux-builder","Costruisci una distro Linux minimale da zero (kernel + BusyBox)","Build a minimal Linux distro from scratch (kernel + BusyBox)",{}],
-    ["qlab-plugin-cyber-lab","Lab attacco/difesa a plugin per qlab: due VM su LAN interna, l'attacco e il test — fail2ban col ban dimostrato, PHP vulnerabile, trappola Docker/FORWARD, mail SPF/DKIM/DMARC (rimpiazza cybersecurity-lab, archiviato)","Attack/defense qlab plugin: two VMs on an internal LAN, the attack is the test — fail2ban with a proven ban, vulnerable PHP, the Docker/FORWARD trap, mail SPF/DKIM/DMARC (replaces the archived cybersecurity-lab)",{}],
+    desc_it:"VM QEMU/KVM installate a zero clic, i plugin di qlab e i lab Multipass usa-e-getta per imparare facendo: RAID, reti, Kubernetes, sicurezza, kernel.",
+    desc_en:"Zero-click QEMU/KVM VMs, the qlab plugin family and disposable Multipass labs to learn by doing: RAID, networking, Kubernetes, security, kernels.",
+    subs:[
+    { it:"🖥️ VM QEMU/KVM e installazioni automatiche", en:"🖥️ QEMU/KVM VMs & Unattended Installs", items:[
+      ["qemu-iso-lab","VM Linux, BSD e Windows su QEMU/KVM installate a zero clic: 101 profili JSON (56 unattended, da Ubuntu 8.04 a Windows NT 4), lab multi-VM (pfSense + Pi-hole, cluster Proxmox), dashboard web e da terminale, reinstallazioni verificate da una matrice di test","Linux, BSD and Windows VMs on QEMU/KVM installed with zero clicks: 101 JSON profiles (56 unattended, from Ubuntu 8.04 to Windows NT 4), multi-VM labs (pfSense + Pi-hole, Proxmox cluster), web and terminal dashboards, reinstalls checked by a real test matrix",{}],
+      ["qemu-playground","Lubuntu 26.04 e Windows 11 installati unattended, con le prove di ogni run: timeline, screenshot QMP e report HTML offline. Niente libvirt, niente root","Lubuntu 26.04 and Windows 11 installed unattended, with evidence of every run: timelines, QMP screenshots and offline HTML reports. No libvirt, no root",{}],
+      ["kvm-lab","Il mio lab KVM/libvirt: un registro unico delle VM, ISO con autoinstall integrato e installazioni senza tastiera (Ubuntu, Debian, Rocky, Fedora, openSUSE, Windows)","My KVM/libvirt lab: a single VM registry, ISOs with built-in autoinstall and hands-off installs (Ubuntu, Debian, Rocky, Fedora, openSUSE, Windows)",{}],
+      ["proxmox-lab","Un cluster Proxmox VE a 3 nodi su un solo host, con autoinstall ripetibile su QEMU","A 3-node Proxmox VE cluster on a single host, with repeatable QEMU autoinstall",{}],
+      ["omv-qemu-lab","Amministrazione NAS con OpenMediaVault in una VM: RAID, dischi guasti e recupero","NAS administration with OpenMediaVault in a VM: RAID, failing disks and recovery",{}],
+      ["qemu-storage-lab","Impara RAID mdadm e LVM in una VM usa-e-getta","Learn mdadm RAID & LVM inside a disposable QEMU VM",{}],
+      ["ubuntu-autoinstall-builder","Wizard bash (sperimentale) per costruire ISO Ubuntu autoinstall personalizzate","Experimental bash wizard to build custom Ubuntu autoinstall ISOs",{}],
+      ["terraform-libvirt-playground","VM KVM locali come infrastructure-as-code con Terraform + libvirt, niente cloud","Local KVM VMs as infrastructure-as-code with Terraform + libvirt, no cloud",{}],
+      ["linux-builder","Costruisci una distro Linux minimale da zero (kernel + BusyBox)","Build a minimal Linux distro from scratch (kernel + BusyBox)",{}],
+    ]},
+    { it:"🧩 qlab e i suoi plugin", en:"🧩 qlab and its plugins", items:[
+      ["qlab","Laboratori QEMU pronti all'uso, a plugin: si installa il lab che serve e si impara su VM vere","Plugin-based hands-on QEMU labs: install the lab you need and learn on real VMs",{}],
+      ["qlab-plugin-cyber-lab","Attacco/difesa su due VM in LAN interna, l'attacco è il test — fail2ban col ban dimostrato, PHP vulnerabile, trappola Docker/FORWARD, mail SPF/DKIM/DMARC (rimpiazza cybersecurity-lab, archiviato)","Attack/defense on two VMs on an internal LAN, the attack is the test — fail2ban with a proven ban, vulnerable PHP, the Docker/FORWARD trap, mail SPF/DKIM/DMARC (replaces the archived cybersecurity-lab)",{}],
+      ["qlab-plugin-systems-lab","Linux Systems, il boot è il test: GRUB, recovery di un boot rotto, sysctl/moduli, LUKS, rete persistente — 8 capitoli, 104 asserzioni su VM vere","Linux Systems, the boot is the test: GRUB, recovering a broken boot, sysctl/modules, LUKS, persistent networking — 8 chapters, 104 assertions on real VMs",{}],
+      ["qlab-plugin-container-lab","Un container è un processo, e lo si misura: namespace/cgroup a mano prima di Docker, immagini, volumi, sicurezza, capstone Compose — 11 capitoli","A container is a process, measured: namespaces/cgroups by hand before Docker, images, volumes, security, a Compose capstone — 11 chapters",{}],
+      ["qlab-plugin-dns-lab","DNS con BIND9: tipi di record, zone, reverse DNS e strumenti di query","DNS with BIND9: record types, zones, reverse DNS and query tools",{}],
+      ["qlab-plugin-dhcp-lab","Server e client DHCP per capire l'indirizzamento dinamico","DHCP server and client to understand dynamic addressing",{}],
+      ["qlab-plugin-firewall-lab","Firewall, filtraggio del traffico e analisi di rete su due VM","Firewalling, traffic filtering and network analysis on two VMs",{}],
+      ["qlab-plugin-vpn-lab","VPN con WireGuard e OpenVPN","VPNs with WireGuard and OpenVPN",{}],
+      ["qlab-plugin-ssh-lab","Hardening di SSH","SSH hardening",{}],
+      ["qlab-plugin-pxe-lab","Netboot PXE, per Debian e per Windows","PXE netboot, for Debian and Windows",{}],
+      ["qlab-plugin-nginx-lab","Nginx come web server su una VM","Nginx as a web server on a VM",{}],
+      ["qlab-plugin-apache-lab","Il web server Apache","The Apache web server",{}],
+      ["qlab-plugin-mail-lab","Postfix e Dovecot: posta fra due client","Postfix and Dovecot: mail between two clients",{}],
+      ["qlab-plugin-ldap-lab","Directory service con OpenLDAP, phpLDAPadmin e un client","Directory services with OpenLDAP, phpLDAPadmin and a client",{}],
+      ["qlab-plugin-pam-lab","Autenticazione con PAM","Authentication with PAM",{}],
+      ["qlab-plugin-mysql-lab","Database MySQL","MySQL databases",{}],
+      ["qlab-plugin-postgres-lab","PostgreSQL con pgAdmin: utenti, gestione e backup","PostgreSQL with pgAdmin: users, management and backups",{}],
+      ["qlab-plugin-raid-lab","Gestione dischi con LVM e ZFS","Disk management with LVM and ZFS",{}],
+      ["qlab-plugin-lvm-lab","Storage con LVM","Storage with LVM",{}],
+      ["qlab-plugin-filesharing-lab","FTP, NFS e Samba a confronto, con server dedicati e un client condiviso","FTP, NFS and Samba compared, with dedicated servers and a shared client",{}],
+      ["qlab-plugin-docker-lab","Docker e Compose","Docker and Compose",{}],
+      ["qlab-plugin-systemd-lab","systemd: servizi, unit file, timer e journald","systemd: services, unit files, timers and journald",{}],
+      ["qlab-plugin-git-lab","Git: commit, branch, merge, conflitti, stash, rebase, git flow","Git: commits, branches, merges, conflicts, stash, rebase, git flow",{}],
+      ["qlab-plugin-ml-network-lab","Machine learning per il monitoraggio di rete con Python e scikit-learn","Machine learning for network monitoring with Python and scikit-learn",{}],
+      ["qlab-plugin-hello-lab","Il plugin minimo: una VM con cloud-init, il punto di partenza per scriverne uno","The minimal plugin: one cloud-init VM, the starting point for writing your own",{}],
+    ]},
+    { it:"☁️ Multipass", en:"☁️ Multipass", items:[
+      ["multipass-microk8s-cluster-demo","Cluster MicroK8s dimostrativo su VM Multipass","MicroK8s cluster demo on Multipass VMs",{}],
+      ["mailcow-multipass-lab","Tre mail server Mailcow indipendenti con DNS integrato, in pochi minuti","Three independent Mailcow mail servers with integrated DNS, in minutes",{}],
+      ["multipass-template","Il template da cui partono gli altri lab Multipass","The template the other Multipass labs start from",{}],
+      ["multipass-microk8s","MicroK8s in una VM Multipass","MicroK8s in a Multipass VM",{}],
+      ["multipass-deviantony-docker-elk","Lo stack ELK (deviantony/docker-elk) in una VM Multipass","The ELK stack (deviantony/docker-elk) in a Multipass VM",{}],
+      ["multipass-gns3","GNS3 in una VM Multipass","GNS3 in a Multipass VM",{}],
+      ["multipass-mariadb","MariaDB con phpMyAdmin in una VM Multipass","MariaDB with phpMyAdmin in a Multipass VM",{}],
+      ["multipass-postgresdb","PostgreSQL con pgAdmin in una VM Multipass","PostgreSQL with pgAdmin in a Multipass VM",{}],
+      ["multipass-mongodb","MongoDB in una VM Multipass","MongoDB in a Multipass VM",{}],
+      ["multipass-redis","Redis (redis-stack) in una VM Multipass","Redis (redis-stack) in a Multipass VM",{}],
+      ["multipass-rust","Ambiente Rust in una VM Multipass","A Rust environment in a Multipass VM",{}],
+      ["multipass-rdp","Desktop remoto RDP su una VM Multipass","RDP remote desktop on a Multipass VM",{}],
+      ["multipass_ssl_certificate_management","Gestione di certificati SSL con VM Multipass","SSL certificate management with Multipass VMs",{}],
+    ]},
   ]},
   { id:"docker", it:"🐳 Tool Docker", en:"🐳 Docker Tools",
     desc_it:"Container pronti all'uso per servizi e strumenti di tutti i giorni: da Packet Tracer al tuo repository PPA personale.",
@@ -346,6 +395,26 @@ const DATA = [
     ["nextcloud-onlyoffice-docker","Stack Nextcloud + OnlyOffice","Nextcloud + OnlyOffice stack",{}],
     ["wordpress-docker-manager","Gestione multi-sito WordPress con Nginx Proxy Manager","Manage multiple WordPress instances with Nginx Proxy Manager",{}],
     ["ubuntu-repo-docker","Il tuo repository di pacchetti Ubuntu/Debian personale (stile PPA)","Your own PPA-like Ubuntu/Debian package repository",{}],
+    ["docker-network-playground","Una rete intera simulata in Docker per imparare, provare e mostrare i concetti di networking","A whole network simulated in Docker to learn, test and demo networking concepts",{}],
+    ["docker-compose-playground","Gestore di ambienti Docker di sviluppo: TUI, interfaccia web, CLI o container","Manager for Docker dev environments: TUI, web UI, CLI or a standalone container",{}],
+    ["imapsync-docker","imapsync in un container, per migrare caselle IMAP","imapsync in a container, to migrate IMAP mailboxes",{}],
+  ]},
+  { id:"tools", it:"🛠️ Tool e automazione", en:"🛠️ Tools & Automation",
+    desc_it:"Gli attrezzi di tutti i giorni: backup, note cifrate, prompt zsh, dashboard da terminale e piccole utility.",
+    desc_en:"Everyday tools: backups, encrypted notes, zsh prompt, terminal dashboards and small utilities.",
+    items:[
+    ["rsync-backup","Backup rsync unificato: configurazione a plugin, anteprima da CLI, dry-run e TUI interattiva","Unified rsync backup: plugin-based config, CLI preview, dry-run and an interactive TUI",{}],
+    ["private-backup","Backup cifrato dei file privati: remoti via SSH, GPG AES256, restore selettivo, upload su Google Drive con rclone","Encrypted backup of private files: SSH remotes, GPG AES256, selective restore, Google Drive upload via rclone",{}],
+    ["notevault","Knowledge base self-hosted multiutente con vault di segreti cifrati AES-256-GCM (FastAPI + Next.js)","Self-hosted multi-user knowledge base with an AES-256-GCM encrypted secrets vault (FastAPI + Next.js)",{}],
+    ["software-checker","Tiene d'occhio le release del software e avvisa quando esce una versione nuova","Tracks software releases and notifies you when a new version is out",{}],
+    ["github-dashboard","Dashboard GitHub da terminale, in Bash con gh e jq","Terminal dashboard for GitHub, in Bash with gh and jq",{}],
+    ["zsh-infra-status","Plugin Oh My Zsh: Docker, Multipass e VM QEMU/libvirt a colpo d'occhio nel prompt","Oh My Zsh plugin: Docker, Multipass and QEMU/libvirt VMs at a glance in your prompt",{}],
+    ["BashCollection","La mia raccolta di script bash preferiti","A collection of my favourite bash scripts",{}],
+    ["gh-pillole","Guida pratica alla CLI gh di GitHub, con esempi in italiano","A practical guide to GitHub's gh CLI, with examples in Italian",{}],
+    ["pc_metrics_ha","Metriche hardware del PC Linux in Home Assistant via MQTT: temperature, RAM, dischi","Linux PC hardware metrics in Home Assistant via MQTT: temperatures, RAM, disks",{}],
+    ["PyTuyaGetDevicesLocalKey","Utility Python per recuperare la local key dei dispositivi Tuya","Python utility to retrieve the local key of Tuya devices",{}],
+    ["skeleton-web","Template GitHub full-stack: FastAPI + React 18 + PostgreSQL, Docker, CI/CD e skill per Claude Code","Full-stack GitHub template: FastAPI + React 18 + PostgreSQL, Docker, CI/CD and Claude Code skills",{}],
+    ["ManzoloAppImage","Dall'idea all'AppImage su Ubuntu: guida dalla A alla Z con ambiente Docker, wizard ed esempi Go/Python/C++","From idea to AppImage on Ubuntu: an A–Z guide with a Docker build env, a wizard and Go/Python/C++ examples",{}],
   ]},
   { id:"science", it:"🔬 Scienza e didattica", en:"🔬 Science & Education",
     desc_it:"Simulatori interattivi 3D ed EDU: astronomia, biologia, chimica e informatica. Tutti provabili nel browser.",
@@ -388,6 +457,54 @@ const DATA = [
   ]},
 ];
 
+// Stelle e repo dal vivo (API GitHub, cache 6 ore): senza rete restano le stelle scritte sopra.
+// I repo pubblici non ancora in DATA finiscono da soli nella sezione "more", così nessuno resta indietro.
+const GH_USER = "manzolo";
+const HIDE = ["manzolo"];                // repo da non mostrare mai fra gli "altri"
+let STARS = {};
+const MORE = { id:"more", it:"🗃️ Altri repo", en:"🗃️ More repos",
+  desc_it:"Tutto il resto, preso dal vivo da GitHub: i repo pubblici che non hanno ancora un posto nelle altre sezioni.",
+  desc_en:"Everything else, fetched live from GitHub: public repos that don't have a place in the other sections yet.",
+  items:[] };
+
+function stars(item) {
+  return STARS[item[0]] ?? ((item[3] && item[3].star) || 0);
+}
+
+async function loadRepos() {
+  const KEY = "gh-repos-v1", TTL = 6 * 3600 * 1000;
+  let repos = null;
+  try {
+    const c = JSON.parse(localStorage.getItem(KEY) || "null");
+    if (c && Date.now() - c.t < TTL) repos = c.repos;
+  } catch (e) {}
+  if (!repos) {
+    try {
+      repos = [];
+      for (let page = 1; page <= 5; page++) {
+        const r = await fetch(`https://api.github.com/users/${GH_USER}/repos?per_page=100&type=owner&page=${page}`);
+        if (!r.ok) throw new Error(r.status);
+        const batch = await r.json();
+        repos.push(...batch.map(x => ({ n:x.name, s:x.stargazers_count, d:x.description || "",
+          f:x.fork, a:x.archived, h:x.homepage || "", p:x.pushed_at || "" })));
+        if (batch.length < 100) break;
+      }
+      try { localStorage.setItem(KEY, JSON.stringify({ t: Date.now(), repos })); } catch (e) {}
+    } catch (e) { return; }
+  }
+  STARS = Object.fromEntries(repos.map(r => [r.n, r.s]));
+  const known = new Set(DATA.flatMap(flatItems).map(i => i[0]));
+  MORE.items = repos
+    .filter(r => !r.f && !r.a && !known.has(r.n) && !HIDE.includes(r.n))
+    .sort((a, b) => b.s - a.s || b.p.localeCompare(a.p))
+    .map(r => {
+      const m = r.h.match(/^https:\/\/manzolo\.github\.io\/([^/]+)\/?$/);
+      return [r.n, r.d, r.d, m ? { demo: m[1] } : {}];
+    });
+  if (MORE.items.length && !DATA.includes(MORE)) DATA.push(MORE);
+  render();
+}
+
 let lang = localStorage.getItem("lang") || "it";
 let searchMode = false;
 
@@ -407,7 +524,8 @@ function card(item) {
   const [repo, it, en, meta = {}] = item;
   const desc = lang === "it" ? it : en;
   const chips = [];
-  if (meta.star) chips.push(`<span class="chip star">⭐ ${meta.star}</span>`);
+  const st = stars(item);
+  if (st) chips.push(`<span class="chip star">⭐ ${st}</span>`);
   if (meta.edu) chips.push(`<span class="chip edu">EDU</span>`);
   const demoLabel = lang === "it" ? "Apri" : "Open";
   const demoLnk = meta.demo
@@ -450,7 +568,7 @@ function sectionHtml(sec) {
 
 function featured(sec) {
   const items = flatItems(sec);
-  const score = i => ((i[3] && i[3].star) || 0) * 1000 + (i[3] && i[3].demo ? 1 : 0);
+  const score = i => stars(i) * 1000 + (i[3] && i[3].demo ? 1 : 0);
   return [...items].sort((a, b) => score(b) - score(a)).slice(0, 3);
 }
 
@@ -459,7 +577,7 @@ function macroCard(sec) {
   const [emoji, ...rest] = title.split(" ");
   const desc = lang === "it" ? sec.desc_it : sec.desc_en;
   const feats = featured(sec).map(i => {
-    const star = i[3] && i[3].star ? "⭐ " : "";
+    const star = stars(i) ? "⭐ " : "";
     return `<span>${star}${i[0]}</span>`;
   }).join("");
   const cta = lang === "it" ? "esplora →" : "explore →";
@@ -579,6 +697,7 @@ window.addEventListener("hashchange", () => {
 
 applyTheme(currentTheme());
 render();
+loadRepos();
 </script>
 </body>
 </html>

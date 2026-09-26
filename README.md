@@ -8,7 +8,7 @@
 
 Appassionato di Linux, Docker, Git, AI in locale e retrogaming — costruisco tool, laboratori e container, soprattutto per divertimento e per imparare (di questi tempi molto con **Claude** e **Codex**). Vivo in Toscana; al **CNR-IFAC** mando avanti un datacenter di medie dimensioni insieme ad altri due colleghi. Da autodidatta, per scelta. Fuori dal codice: radioamatore **IU5VMO** (patente presa, stazione ancora da montare) e scrivo canzoni, soprattutto per me, con [Suno](https://suno.com/@manzolo).
 
-> 🗂️ **Menu interattivo dei progetti:** [manzolo.github.io/manzolo](https://manzolo.github.io/manzolo/) — una home coi macroargomenti e sottopagine dedicate ([🤖 AI & LLM](https://manzolo.github.io/manzolo/#/ai) · [🧪 Laboratori](https://manzolo.github.io/manzolo/#/labs) · [🐳 Docker](https://manzolo.github.io/manzolo/#/docker) · [🔬 Scienza](https://manzolo.github.io/manzolo/#/science)), con ricerca globale.
+> 🗂️ **Menu interattivo dei progetti:** [manzolo.github.io/manzolo](https://manzolo.github.io/manzolo/) — una home coi macroargomenti e sottopagine dedicate ([🤖 AI & LLM](https://manzolo.github.io/manzolo/#/ai) · [🧪 Laboratori](https://manzolo.github.io/manzolo/#/labs) · [🐳 Docker](https://manzolo.github.io/manzolo/#/docker) · [🛠️ Tool](https://manzolo.github.io/manzolo/#/tools) · [🔬 Scienza](https://manzolo.github.io/manzolo/#/science) · [🗃️ Altri repo](https://manzolo.github.io/manzolo/#/more), aggiornati dal vivo), con ricerca globale e stelle aggiornate da GitHub.
 
 ### 🤖 AI & LLM
 
@@ -18,8 +18,8 @@ Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, ag
 
 | Repo | Descrizione |
 |------|-------------|
-| [openai-whisper-docker](https://github.com/manzolo/openai-whisper-docker) ⭐174 | Ambiente Docker per OpenAI Whisper, riconoscimento vocale automatico |
-| [myshell-openvoice-docker](https://github.com/manzolo/myshell-openvoice-docker) ⭐40 | OpenVoice (MyShell AI) in Docker: manipolazione e conversione della voce |
+| [openai-whisper-docker](https://github.com/manzolo/openai-whisper-docker) ![stelle](https://img.shields.io/github/stars/manzolo/openai-whisper-docker?style=flat&label=%E2%AD%90) | Ambiente Docker per OpenAI Whisper, riconoscimento vocale automatico |
+| [myshell-openvoice-docker](https://github.com/manzolo/myshell-openvoice-docker) ![stelle](https://img.shields.io/github/stars/manzolo/myshell-openvoice-docker?style=flat&label=%E2%AD%90) | OpenVoice (MyShell AI) in Docker: manipolazione e conversione della voce |
 | [ai-voice-offline](https://github.com/manzolo/ai-voice-offline) | Conversazione vocale AI offline con GPU e voice cloning |
 | [ai-voice-tts](https://github.com/manzolo/ai-voice-tts) / [ai-voice-stt](https://github.com/manzolo/ai-voice-stt) | Sintesi e trascrizione vocale offline con interfaccia web |
 | [bark-tts-server](https://github.com/manzolo/bark-tts-server) | Servizio HTTP FastAPI per Suno Bark TTS, Dockerizzato con GPU |
@@ -62,6 +62,11 @@ Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, ag
 
 | Repo | Descrizione |
 |------|-------------|
+| [qemu-iso-lab](https://github.com/manzolo/qemu-iso-lab) 🆕 | VM Linux, BSD e Windows su QEMU/KVM installate a zero clic: 101 profili JSON (56 unattended, da Ubuntu 8.04 a Windows NT 4), lab multi-VM (pfSense + Pi-hole, cluster Proxmox), dashboard web e da terminale, reinstallazioni verificate da una matrice di test |
+| [qemu-playground](https://github.com/manzolo/qemu-playground) | Lubuntu 26.04 e Windows 11 installati unattended, con le prove di ogni run: timeline, screenshot QMP e report HTML offline. Niente libvirt, niente root |
+| [kvm-lab](https://github.com/manzolo/kvm-lab) | Il mio lab KVM/libvirt: registro unico delle VM, ISO con autoinstall integrato, installazioni senza tastiera |
+| [proxmox-lab](https://github.com/manzolo/proxmox-lab) · [omv-qemu-lab](https://github.com/manzolo/omv-qemu-lab) | Cluster Proxmox VE a 3 nodi su un solo host · NAS OpenMediaVault in VM: RAID, dischi guasti e recupero |
+| [ubuntu-autoinstall-builder](https://github.com/manzolo/ubuntu-autoinstall-builder) · [terraform-libvirt-playground](https://github.com/manzolo/terraform-libvirt-playground) | Wizard per ISO Ubuntu autoinstall · VM KVM locali come infrastructure-as-code con Terraform + libvirt |
 | [qlab](https://github.com/manzolo/qlab) | Laboratori QEMU pronti all'uso, a plugin (DNS, firewall, RAID, LDAP, mail…) |
 | [qemu-storage-lab](https://github.com/manzolo/qemu-storage-lab) | Impara RAID mdadm e LVM in una VM usa-e-getta |
 | [multipass-microk8s-cluster-demo](https://github.com/manzolo/multipass-microk8s-cluster-demo) | Cluster MicroK8s dimostrativo su VM Multipass |
@@ -69,6 +74,8 @@ Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, ag
 | [qlab-plugin-cyber-lab](https://github.com/manzolo/qlab-plugin-cyber-lab) | Lab attacco/difesa a plugin per qlab: due VM su una LAN interna, l'attacco è il test — fail2ban col ban dimostrato, PHP vulnerabile, trappola Docker/FORWARD, mail SPF/DKIM/DMARC (rimpiazza cybersecurity-lab, archiviato) |
 | [qlab-plugin-systems-lab](https://github.com/manzolo/qlab-plugin-systems-lab) | Linux Systems a plugin per qlab: **il boot è il test** — parametro kernel via GRUB, recovery di un boot rotto dalla VM di soccorso, sysctl/moduli, partizioni per UUID, LUKS contro l'attaccante col disco in mano, rete persistente, diagnostica dal vivo e un capstone recuperato da macchina spenta (8 capitoli, 104 asserzioni su VM vere) |
 | [qlab-plugin-container-lab](https://github.com/manzolo/qlab-plugin-container-lab) | Container Lab a plugin per qlab: **un container è un processo, e lo si misura** — namespace/cgroup a mano prima di Docker, immagini immutabili, build non-root riproducibili, volumi, DNS dei container, sicurezza (l'operazione vietata fallisce davvero), l'incidente del registry senza auth, e un capstone Compose multi-servizio (11 capitoli) |
+| Altri plugin qlab | [dns](https://github.com/manzolo/qlab-plugin-dns-lab) · [dhcp](https://github.com/manzolo/qlab-plugin-dhcp-lab) · [firewall](https://github.com/manzolo/qlab-plugin-firewall-lab) · [vpn](https://github.com/manzolo/qlab-plugin-vpn-lab) · [ssh](https://github.com/manzolo/qlab-plugin-ssh-lab) · [pxe](https://github.com/manzolo/qlab-plugin-pxe-lab) · [nginx](https://github.com/manzolo/qlab-plugin-nginx-lab) · [apache](https://github.com/manzolo/qlab-plugin-apache-lab) · [mail](https://github.com/manzolo/qlab-plugin-mail-lab) · [ldap](https://github.com/manzolo/qlab-plugin-ldap-lab) · [pam](https://github.com/manzolo/qlab-plugin-pam-lab) · [mysql](https://github.com/manzolo/qlab-plugin-mysql-lab) · [postgres](https://github.com/manzolo/qlab-plugin-postgres-lab) · [raid](https://github.com/manzolo/qlab-plugin-raid-lab) · [lvm](https://github.com/manzolo/qlab-plugin-lvm-lab) · [filesharing](https://github.com/manzolo/qlab-plugin-filesharing-lab) · [docker](https://github.com/manzolo/qlab-plugin-docker-lab) · [systemd](https://github.com/manzolo/qlab-plugin-systemd-lab) · [git](https://github.com/manzolo/qlab-plugin-git-lab) · [ml-network](https://github.com/manzolo/qlab-plugin-ml-network-lab) · [hello](https://github.com/manzolo/qlab-plugin-hello-lab) |
+| [mailcow-multipass-lab](https://github.com/manzolo/mailcow-multipass-lab) · [multipass-*](https://github.com/manzolo/?tab=repositories&q=multipass) | Tre mail server Mailcow con DNS integrato · la famiglia di lab Multipass (MariaDB, PostgreSQL, MongoDB, Redis, ELK, GNS3, Rust, RDP…) |
 
 ### 🐳 Tool Docker
 
@@ -78,6 +85,22 @@ Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, ag
 | [nextcloud-onlyoffice-docker](https://github.com/manzolo/nextcloud-onlyoffice-docker) | Stack Nextcloud + OnlyOffice |
 | [wordpress-docker-manager](https://github.com/manzolo/wordpress-docker-manager) | Gestione multi-sito WordPress con Nginx Proxy Manager |
 | [ubuntu-repo-docker](https://github.com/manzolo/ubuntu-repo-docker) | Il tuo repository di pacchetti Ubuntu/Debian personale (stile PPA) |
+| [docker-network-playground](https://github.com/manzolo/docker-network-playground) | Una rete intera simulata in Docker per imparare il networking |
+| [docker-compose-playground](https://github.com/manzolo/docker-compose-playground) | Gestore di ambienti Docker di sviluppo: TUI, web, CLI o container |
+| [imapsync-docker](https://github.com/manzolo/imapsync-docker) | imapsync in un container, per migrare caselle IMAP |
+
+### 🛠️ Tool e automazione
+
+| Repo | Descrizione |
+|------|-------------|
+| [rsync-backup](https://github.com/manzolo/rsync-backup) | Backup rsync unificato: configurazione a plugin, anteprima, dry-run e TUI |
+| [private-backup](https://github.com/manzolo/private-backup) | Backup cifrato dei file privati: remoti SSH, GPG AES256, restore selettivo, rclone |
+| [notevault](https://github.com/manzolo/notevault) | Knowledge base self-hosted con vault di segreti cifrati AES-256-GCM |
+| [software-checker](https://github.com/manzolo/software-checker) | Tiene d'occhio le release del software e avvisa quando esce una versione nuova |
+| [zsh-infra-status](https://github.com/manzolo/zsh-infra-status) · [github-dashboard](https://github.com/manzolo/github-dashboard) | Docker, Multipass e VM nel prompt zsh · dashboard GitHub da terminale |
+| [BashCollection](https://github.com/manzolo/BashCollection) · [gh-pillole](https://github.com/manzolo/gh-pillole) | I miei script bash preferiti · guida pratica alla CLI gh, in italiano |
+| [pc_metrics_ha](https://github.com/manzolo/pc_metrics_ha) · [PyTuyaGetDevicesLocalKey](https://github.com/manzolo/PyTuyaGetDevicesLocalKey) | Metriche del PC in Home Assistant via MQTT · local key dei dispositivi Tuya |
+| [skeleton-web](https://github.com/manzolo/skeleton-web) · [ManzoloAppImage](https://github.com/manzolo/ManzoloAppImage) | Template FastAPI + React + PostgreSQL · dall'idea all'AppImage su Ubuntu |
 
 ### 🔬 Scienza e didattica
 
@@ -129,7 +152,7 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 
 Linux, Docker, Git, local-AI and retrogaming enthusiast — I build tools, hands-on labs and containers, mostly for fun and learning (these days a lot with **Claude** and **Codex**). Based in Tuscany; at **CNR-IFAC** I run a mid-sized datacenter with two colleagues. Self-taught, by choice. Beyond code: ham radio **IU5VMO** (licence earned, station still to set up) and I write songs, mostly for myself, with [Suno](https://suno.com/@manzolo).
 
-> 🗂️ **Interactive project menu:** [manzolo.github.io/manzolo](https://manzolo.github.io/manzolo/) — a home page of macro-topics with dedicated subpages ([🤖 AI & LLM](https://manzolo.github.io/manzolo/#/ai) · [🧪 Labs](https://manzolo.github.io/manzolo/#/labs) · [🐳 Docker](https://manzolo.github.io/manzolo/#/docker) · [🔬 Science](https://manzolo.github.io/manzolo/#/science)), with global search.
+> 🗂️ **Interactive project menu:** [manzolo.github.io/manzolo](https://manzolo.github.io/manzolo/) — a home page of macro-topics with dedicated subpages ([🤖 AI & LLM](https://manzolo.github.io/manzolo/#/ai) · [🧪 Labs](https://manzolo.github.io/manzolo/#/labs) · [🐳 Docker](https://manzolo.github.io/manzolo/#/docker) · [🛠️ Tools](https://manzolo.github.io/manzolo/#/tools) · [🔬 Science](https://manzolo.github.io/manzolo/#/science) · [🗃️ More repos](https://manzolo.github.io/manzolo/#/more), updated live), with global search and live GitHub stars.
 
 ### 🤖 AI & LLM
 
@@ -139,8 +162,8 @@ I love running AI **locally**: speech recognition, voice cloning, LLM agents, do
 
 | Repo | Description |
 |------|-------------|
-| [openai-whisper-docker](https://github.com/manzolo/openai-whisper-docker) ⭐174 | Docker environment for OpenAI Whisper automatic speech recognition |
-| [myshell-openvoice-docker](https://github.com/manzolo/myshell-openvoice-docker) ⭐40 | OpenVoice (MyShell AI) voice manipulation & conversion in Docker |
+| [openai-whisper-docker](https://github.com/manzolo/openai-whisper-docker) ![stelle](https://img.shields.io/github/stars/manzolo/openai-whisper-docker?style=flat&label=%E2%AD%90) | Docker environment for OpenAI Whisper automatic speech recognition |
+| [myshell-openvoice-docker](https://github.com/manzolo/myshell-openvoice-docker) ![stelle](https://img.shields.io/github/stars/manzolo/myshell-openvoice-docker?style=flat&label=%E2%AD%90) | OpenVoice (MyShell AI) voice manipulation & conversion in Docker |
 | [ai-voice-offline](https://github.com/manzolo/ai-voice-offline) | Local GPU-accelerated AI voice conversation with voice cloning |
 | [ai-voice-tts](https://github.com/manzolo/ai-voice-tts) / [ai-voice-stt](https://github.com/manzolo/ai-voice-stt) | Local TTS & STT services with web UI, fully offline |
 | [bark-tts-server](https://github.com/manzolo/bark-tts-server) | FastAPI HTTP service for Suno Bark TTS, Dockerized with GPU support |
@@ -183,6 +206,11 @@ I love running AI **locally**: speech recognition, voice cloning, LLM agents, do
 
 | Repo | Description |
 |------|-------------|
+| [qemu-iso-lab](https://github.com/manzolo/qemu-iso-lab) 🆕 | Linux, BSD and Windows VMs on QEMU/KVM installed with zero clicks: 101 JSON profiles (56 unattended, from Ubuntu 8.04 to Windows NT 4), multi-VM labs (pfSense + Pi-hole, Proxmox cluster), web and terminal dashboards, reinstalls checked by a real test matrix |
+| [qemu-playground](https://github.com/manzolo/qemu-playground) | Lubuntu 26.04 and Windows 11 installed unattended, with evidence of every run: timelines, QMP screenshots and offline HTML reports. No libvirt, no root |
+| [kvm-lab](https://github.com/manzolo/kvm-lab) | My KVM/libvirt lab: a single VM registry, ISOs with built-in autoinstall, hands-off installs |
+| [proxmox-lab](https://github.com/manzolo/proxmox-lab) · [omv-qemu-lab](https://github.com/manzolo/omv-qemu-lab) | 3-node Proxmox VE cluster on one host · OpenMediaVault NAS in a VM: RAID, failing disks and recovery |
+| [ubuntu-autoinstall-builder](https://github.com/manzolo/ubuntu-autoinstall-builder) · [terraform-libvirt-playground](https://github.com/manzolo/terraform-libvirt-playground) | Wizard for Ubuntu autoinstall ISOs · local KVM VMs as infrastructure-as-code with Terraform + libvirt |
 | [qlab](https://github.com/manzolo/qlab) | Plugin-based hands-on QEMU labs (DNS, firewall, RAID, LDAP, mail…) |
 | [qemu-storage-lab](https://github.com/manzolo/qemu-storage-lab) | Learn mdadm RAID & LVM inside a disposable QEMU VM |
 | [multipass-microk8s-cluster-demo](https://github.com/manzolo/multipass-microk8s-cluster-demo) | MicroK8s cluster demo on Multipass VMs |
@@ -190,6 +218,8 @@ I love running AI **locally**: speech recognition, voice cloning, LLM agents, do
 | [qlab-plugin-cyber-lab](https://github.com/manzolo/qlab-plugin-cyber-lab) | Attack/defense qlab plugin: two VMs on an internal LAN, the attack is the test — fail2ban with a proven ban, vulnerable PHP, the Docker/FORWARD trap, mail SPF/DKIM/DMARC (replaces the archived cybersecurity-lab) |
 | [qlab-plugin-systems-lab](https://github.com/manzolo/qlab-plugin-systems-lab) | Linux Systems qlab plugin: **the boot is the test** — kernel cmdline via GRUB, rescue of a broken boot from a helper VM, sysctl/modules, partitions by UUID, LUKS vs the attacker holding the disk, persistent networking, live diagnostics, and a capstone recovered from a powered-off machine (8 chapters, 104 assertions on real VMs) |
 | [qlab-plugin-container-lab](https://github.com/manzolo/qlab-plugin-container-lab) | Container Lab qlab plugin: **a container is a process, and we measure it** — namespaces/cgroups by hand before Docker, immutable images, reproducible non-root builds, volumes, container DNS, security (the forbidden op really fails), the no-auth registry incident, and a multi-service Compose capstone (11 chapters) |
+| More qlab plugins | [dns](https://github.com/manzolo/qlab-plugin-dns-lab) · [dhcp](https://github.com/manzolo/qlab-plugin-dhcp-lab) · [firewall](https://github.com/manzolo/qlab-plugin-firewall-lab) · [vpn](https://github.com/manzolo/qlab-plugin-vpn-lab) · [ssh](https://github.com/manzolo/qlab-plugin-ssh-lab) · [pxe](https://github.com/manzolo/qlab-plugin-pxe-lab) · [nginx](https://github.com/manzolo/qlab-plugin-nginx-lab) · [apache](https://github.com/manzolo/qlab-plugin-apache-lab) · [mail](https://github.com/manzolo/qlab-plugin-mail-lab) · [ldap](https://github.com/manzolo/qlab-plugin-ldap-lab) · [pam](https://github.com/manzolo/qlab-plugin-pam-lab) · [mysql](https://github.com/manzolo/qlab-plugin-mysql-lab) · [postgres](https://github.com/manzolo/qlab-plugin-postgres-lab) · [raid](https://github.com/manzolo/qlab-plugin-raid-lab) · [lvm](https://github.com/manzolo/qlab-plugin-lvm-lab) · [filesharing](https://github.com/manzolo/qlab-plugin-filesharing-lab) · [docker](https://github.com/manzolo/qlab-plugin-docker-lab) · [systemd](https://github.com/manzolo/qlab-plugin-systemd-lab) · [git](https://github.com/manzolo/qlab-plugin-git-lab) · [ml-network](https://github.com/manzolo/qlab-plugin-ml-network-lab) · [hello](https://github.com/manzolo/qlab-plugin-hello-lab) |
+| [mailcow-multipass-lab](https://github.com/manzolo/mailcow-multipass-lab) · [multipass-*](https://github.com/manzolo/?tab=repositories&q=multipass) | Three Mailcow mail servers with integrated DNS · the Multipass lab family (MariaDB, PostgreSQL, MongoDB, Redis, ELK, GNS3, Rust, RDP…) |
 
 ### 🐳 Docker Tools
 
@@ -199,6 +229,22 @@ I love running AI **locally**: speech recognition, voice cloning, LLM agents, do
 | [nextcloud-onlyoffice-docker](https://github.com/manzolo/nextcloud-onlyoffice-docker) | Nextcloud + OnlyOffice stack |
 | [wordpress-docker-manager](https://github.com/manzolo/wordpress-docker-manager) | Manage multiple WordPress instances with Nginx Proxy Manager |
 | [ubuntu-repo-docker](https://github.com/manzolo/ubuntu-repo-docker) | Your own PPA-like Ubuntu/Debian package repository |
+| [docker-network-playground](https://github.com/manzolo/docker-network-playground) | A whole network simulated in Docker to learn networking |
+| [docker-compose-playground](https://github.com/manzolo/docker-compose-playground) | Manager for Docker dev environments: TUI, web, CLI or container |
+| [imapsync-docker](https://github.com/manzolo/imapsync-docker) | imapsync in a container, to migrate IMAP mailboxes |
+
+### 🛠️ Tools & Automation
+
+| Repo | Description |
+|------|-------------|
+| [rsync-backup](https://github.com/manzolo/rsync-backup) | Unified rsync backup: plugin-based config, preview, dry-run and TUI |
+| [private-backup](https://github.com/manzolo/private-backup) | Encrypted backup of private files: SSH remotes, GPG AES256, selective restore, rclone |
+| [notevault](https://github.com/manzolo/notevault) | Self-hosted knowledge base with an AES-256-GCM encrypted secrets vault |
+| [software-checker](https://github.com/manzolo/software-checker) | Tracks software releases and notifies you when a new version is out |
+| [zsh-infra-status](https://github.com/manzolo/zsh-infra-status) · [github-dashboard](https://github.com/manzolo/github-dashboard) | Docker, Multipass and VMs in your zsh prompt · terminal dashboard for GitHub |
+| [BashCollection](https://github.com/manzolo/BashCollection) · [gh-pillole](https://github.com/manzolo/gh-pillole) | My favourite bash scripts · a practical gh CLI guide (Italian) |
+| [pc_metrics_ha](https://github.com/manzolo/pc_metrics_ha) · [PyTuyaGetDevicesLocalKey](https://github.com/manzolo/PyTuyaGetDevicesLocalKey) | PC metrics in Home Assistant via MQTT · local key of Tuya devices |
+| [skeleton-web](https://github.com/manzolo/skeleton-web) · [ManzoloAppImage](https://github.com/manzolo/ManzoloAppImage) | FastAPI + React + PostgreSQL template · from idea to AppImage on Ubuntu |
 
 ### 🔬 Science & Education
 
