@@ -62,7 +62,7 @@ Mi piace far girare l'AI **in locale**: riconoscimento vocale, voice cloning, ag
 
 | Repo | Descrizione |
 |------|-------------|
-| [qemu-iso-lab](https://github.com/manzolo/qemu-iso-lab) 🆕 | VM Linux, BSD e Windows su QEMU/KVM installate a zero clic: 101 profili JSON (56 unattended, da Ubuntu 8.04 a Windows NT 4), lab multi-VM (pfSense + Pi-hole, cluster Proxmox), dashboard web e da terminale, reinstallazioni verificate da una matrice di test |
+| [qemu-iso-lab](https://github.com/manzolo/qemu-iso-lab) 🆕 | VM Linux, BSD e Windows su QEMU/KVM installate a zero clic: oltre 100 profili JSON (56 unattended, da Ubuntu 8.04 a Windows NT 4), lab multi-VM (pfSense + Pi-hole, cluster Proxmox), dashboard web e da terminale, reinstallazioni verificate da una matrice di test |
 | [qemu-playground](https://github.com/manzolo/qemu-playground) | Lubuntu 26.04 e Windows 11 installati unattended, con le prove di ogni run: timeline, screenshot QMP e report HTML offline. Niente libvirt, niente root |
 | [kvm-lab](https://github.com/manzolo/kvm-lab) | Il mio lab KVM/libvirt: registro unico delle VM, ISO con autoinstall integrato, installazioni senza tastiera |
 | [proxmox-lab](https://github.com/manzolo/proxmox-lab) · [omv-qemu-lab](https://github.com/manzolo/omv-qemu-lab) | Cluster Proxmox VE a 3 nodi su un solo host · NAS OpenMediaVault in VM: RAID, dischi guasti e recupero |
@@ -206,7 +206,7 @@ I love running AI **locally**: speech recognition, voice cloning, LLM agents, do
 
 | Repo | Description |
 |------|-------------|
-| [qemu-iso-lab](https://github.com/manzolo/qemu-iso-lab) 🆕 | Linux, BSD and Windows VMs on QEMU/KVM installed with zero clicks: 101 JSON profiles (56 unattended, from Ubuntu 8.04 to Windows NT 4), multi-VM labs (pfSense + Pi-hole, Proxmox cluster), web and terminal dashboards, reinstalls checked by a real test matrix |
+| [qemu-iso-lab](https://github.com/manzolo/qemu-iso-lab) 🆕 | Linux, BSD and Windows VMs on QEMU/KVM installed with zero clicks: 100+ JSON profiles (56 unattended, from Ubuntu 8.04 to Windows NT 4), multi-VM labs (pfSense + Pi-hole, Proxmox cluster), web and terminal dashboards, reinstalls checked by a real test matrix |
 | [qemu-playground](https://github.com/manzolo/qemu-playground) | Lubuntu 26.04 and Windows 11 installed unattended, with evidence of every run: timelines, QMP screenshots and offline HTML reports. No libvirt, no root |
 | [kvm-lab](https://github.com/manzolo/kvm-lab) | My KVM/libvirt lab: a single VM registry, ISOs with built-in autoinstall, hands-off installs |
 | [proxmox-lab](https://github.com/manzolo/proxmox-lab) · [omv-qemu-lab](https://github.com/manzolo/omv-qemu-lab) | 3-node Proxmox VE cluster on one host · OpenMediaVault NAS in a VM: RAID, failing disks and recovery |
