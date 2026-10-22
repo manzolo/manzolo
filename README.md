@@ -144,6 +144,12 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 | [CyberLab](https://github.com/manzolo/CyberLab) | Impara a difenderti con due host Linux **veri** affiancati nel browser (attaccante e difensore su una LAN): l'attacco è il test — scoperta delle porte, fail2ban col ban dimostrato, il filtro cieco, falle web (XSS, traversal, RCE), 11 capitoli verificati sulle macchine (IT/EN) | [Apri](https://manzolo.github.io/CyberLab/) |
 | [FsLab](https://github.com/manzolo/FsLab) | La radice Linux **cartella per cartella** su un kernel vero nel browser: `/etc`, `/var/log`, `/proc`, `/dev`… ogni capitolo dice cosa c'è, cambia qualcosa e osserva l'effetto vivo, poi indaga. 14 capitoli, 41 esercizi verificati sulla macchina — «/etc è la promessa, /proc è la verità» (IT/EN) | [Apri](https://manzolo.github.io/FsLab/) |
 
+### 🎮 Giochi
+
+| Repo | Descrizione | Gioca |
+|------|-------------|-------|
+| [manzolo-rush](https://github.com/manzolo/manzolo-rush) | **Manzolo Rush**, il giochino di famiglia: endless runner 3D a tre corsie (Three.js) con corsa, salto, scivolata e sparo in tre ambienti, e i personaggi della famiglia da scegliere — anche da telefono | [Gioca](https://manzolo.github.io/manzolo-rush/) |
+
 ---
 
 # 🇬🇧 English
@@ -287,6 +293,12 @@ All playable right in your browser, nothing to install. 👇
 | [SshLab](https://github.com/manzolo/SshLab) | Learn SSH with two **real** Linux hosts side by side in the browser: real OpenSSH, 12 chapters and 25 exercises checked on the machines (IT/EN) | [Open](https://manzolo.github.io/SshLab/?lang=en) |
 | [CyberLab](https://github.com/manzolo/CyberLab) | Learn to defend with two **real** Linux hosts side by side in the browser (attacker and defender on a LAN): the attack is the test — port discovery, fail2ban with a proven ban, the blind filter, web flaws (XSS, traversal, RCE), 11 chapters checked on the machines (IT/EN) | [Open](https://manzolo.github.io/CyberLab/?lang=en) |
 | [FsLab](https://github.com/manzolo/FsLab) | The Linux root **one directory at a time** on a real kernel in the browser: `/etc`, `/var/log`, `/proc`, `/dev`… each chapter says what is there, changes something and observes the live effect, then investigates. 14 chapters, 41 exercises checked on the machine — "/etc is the promise, /proc is the truth" (IT/EN) | [Open](https://manzolo.github.io/FsLab/) |
+
+### 🎮 Games
+
+| Repo | Description | Play |
+|------|-------------|------|
+| [manzolo-rush](https://github.com/manzolo/manzolo-rush) | **Manzolo Rush**, the family game: a three-lane 3D endless runner (Three.js) with running, jumping, sliding and shooting across three worlds, starring the family as playable characters — phone-friendly too | [Play](https://manzolo.github.io/manzolo-rush/) |
 
 ---
 
