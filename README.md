@@ -149,6 +149,7 @@ Tutti provabili subito nel browser, senza installare nulla. 👇
 | Repo | Descrizione | Gioca |
 |------|-------------|-------|
 | [manzolo-rush](https://github.com/manzolo/manzolo-rush) | **Manzolo Rush**, il giochino di famiglia: endless runner 3D a tre corsie (Three.js) con corsa, salto, scivolata e sparo in tre ambienti, e i personaggi della famiglia da scegliere — anche da telefono | [Gioca](https://manzolo.github.io/manzolo-rush/) |
+| [retropie-docker](https://github.com/manzolo/retropie-docker) | RetroPie in un container per il desktop Linux (Wayland), con GPU NVIDIA o senza: un'immagine sola, una cartella di dati portabile e gli emulatori scelti da un elenco | — |
 
 ---
 
@@ -299,6 +300,7 @@ All playable right in your browser, nothing to install. 👇
 | Repo | Description | Play |
 |------|-------------|------|
 | [manzolo-rush](https://github.com/manzolo/manzolo-rush) | **Manzolo Rush**, the family game: a three-lane 3D endless runner (Three.js) with running, jumping, sliding and shooting across three worlds, starring the family as playable characters — phone-friendly too | [Play](https://manzolo.github.io/manzolo-rush/) |
+| [retropie-docker](https://github.com/manzolo/retropie-docker) | RetroPie in a container for the Linux desktop (Wayland), with or without an NVIDIA GPU: one image, one portable data directory and emulators picked from a list | — |
 
 ---
 
